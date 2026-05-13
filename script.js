@@ -2971,7 +2971,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Index Page Logic ---
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('index') || window.location.pathname.endsWith('index/')) {
 
         // Search Functionality
         const searchInput = document.getElementById('crisis-search');
@@ -2996,7 +2996,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Crisis Detail Page Logic ---
-    if (window.location.pathname.endsWith('crisis.html')) {
+    if (window.location.pathname.endsWith('crisis.html') || window.location.pathname.endsWith('crisis') || window.location.pathname.endsWith('crisis/')) {
         const urlParams = new URLSearchParams(window.location.search);
         const crisisId = urlParams.get('id');
 
