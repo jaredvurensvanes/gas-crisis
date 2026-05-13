@@ -2971,7 +2971,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Index Page Logic ---
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('gascrisis_net/')) {
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
 
         // Search Functionality
         const searchInput = document.getElementById('crisis-search');
