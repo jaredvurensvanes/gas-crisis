@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GasCrisis.net - Anaesthesia Crisis Manual</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <header class="app-header">
+            <h1>gas<span>crisis.net</span></h1>
+        </header>
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="crisis-search" placeholder="Search">
+        </div>
+    </div>
+
+    <main class="grid-container">
+        <!-- Tile 1: A/B -->
+        <div class="tile tile-ab" tabindex="0">
+            <div class="tile-content">
+                <h2>Airway / Breathing</h2>
+                <ul class="crisis-list" data-no-sort="true">
+                    <li><a href="crisis.html?id=ab-hypoxia">HYPOXIA / LOW SPO2</a></li>
+                    <li><a href="crisis.html?id=ab-pressure">HIGH AIRWAY PRESSURE</a></li>
+                    <li><a href="crisis.html?id=ab-co2-low">LOW END TIDAL CO2</a></li>
+                    <li><a href="crisis.html?id=ab-co2-high">HIGH END TIDAL CO2</a></li>
+                    <li><a href="crisis.html?id=ab-laryngospasm">LARYNGOSPASM</a></li>
+                    <li><a href="crisis.html?id=ab-bronchospasm">BRONCHOSPASM</a></li>
+                    <li><a href="crisis.html?id=ab-aspiration">ASPIRATION</a></li>
+
+                    <li><a href="crisis.html?id=ab-difficult-airway">UNANTICIPATED DIFFICULT AIRWAY</a></li>
+                    <li><a href="crisis.html?id=ab-NECK HAEMATOMA POST THYROID SURGERY">NECK HAEMATOMA POST THYROID SURGERY</a></li>
+                    <li><a href="crisis.html?id=ab-CICO">CICO (ADULT)</a></li>
+                    <li><a href="crisis.html?id=p-cico">CICO (PAED)</a></li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Handle -->
+                    <rect x="10" y="10" width="3.5" height="12" rx="0.5" />
+                    <!-- Neck -->
+                    <rect x="10.5" y="8" width="2.5" height="2" />
+                    <!-- Blade Block -->
+                    <rect x="10" y="6" width="3.5" height="2" />
+                    <!-- Sweeping Blade -->
+                    <path d="M 10 6 C 15 3.5 19 4.5 23 9 C 22.5 9 22 8.5 21.5 8 C 17 5 14.5 5.5 13.5 6" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tile 2: C -->
+        <div class="tile tile-c" tabindex="0">
+            <div class="tile-content">
+                <h2>Circulation</h2>
+                <ul class="crisis-list" data-no-sort="true">
+                    <li><a href="crisis.html?id=c-hypotension">HYPOTENSION</a></li>
+                    <li><a href="crisis.html?id=c-hypertension">HYPERTENSION</a></li>
+                    <li><a href="crisis.html?id=c-bradycardia">BRADYCARDIA</a></li>
+                    <li><a href="crisis.html?id=c-tachycardia">TACHYCARDIA</a></li>
+                    <li><a href="crisis.html?id=c-ischaemia">INTRAOPERATIVE MYOCARDIAL ISCHAEMIA</a></li>
+                    <li><a href="crisis.html?id=c-haemorrhage">MASSIVE HAEMORRHAGE</a></li>
+                    <li><a href="crisis.html?id=c-anaphylaxis">ANAPHYLAXIS</a></li>
+                    <li><a href="crisis.html?id=c-embolism">AIR / GAS EMBOLISM</a></li>
+                    <li><a href="crisis.html?id=c-cardiac-arrest">ADULT CARDIAC ARREST / ALS</a></li>
+                    <li><a href="crisis.html?id=c-cals">ARREST POST CARDIAC SURGERY</a></li>
+                    <li><a href="crisis.html?id=c-transfusion">HAEMOLYTIC TRANSFUSION REACTION</a></li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Echo Probe Body -->
+                    <path d="M 11.5 1 C 11.5 3 11 4 11 5 L 10 9 C 8 10.5 8 13.5 9.2 15 L 9.5 17.5 C 8.5 18.5 8.5 19.5 9.5 20.5 L 14.5 20.5 C 15.5 19.5 15.5 18.5 14.5 17.5 L 14.8 15 C 16 13.5 16 10.5 14 9 L 13 5 C 13 4 12.5 3 12.5 1 Z" />
+                    <!-- Transducer Lens Face -->
+                    <path d="M 9.5 20.5 L 10.3 22 L 13.7 22 L 14.5 20.5 Z" fill="currentColor" stroke="none" />
+                    <!-- Neck Line -->
+                    <path d="M 10 9 L 14 9" />
+                    <!-- Logo Circle -->
+                    <circle cx="12" cy="12.5" r="1.5" />
+                    <!-- Small Orientation Marker -->
+                    <path d="M 14.6 16.5 L 15.3 16.5 L 15.3 17.5 L 14.5 17.5" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tile 3: D -->
+        <div class="tile tile-d" tabindex="0">
+            <div class="tile-content">
+                <h2>Disabilty</h2>
+                <ul class="crisis-list" data-no-sort="true">
+                    <li><a href="crisis.html?id=d-emergence">DELAYED EMERGENCE / FAILURE TO WAKE</a></li>
+                    <li><a href="crisis.html?id=d-icp">RAISED INTRACRANIAL PRESSURE</a></li>
+                    <li><a href="crisis.html?id=d-spinal">HIGH / TOTAL SPINAL</a></li>
+                    <li><a href="crisis.html?id=d-seizure">SEIZURE DURING CRANIOTOMY</a></li>
+                    <li><a href="crisis.html?id=d-evoked">LOSS OF EVOKED POTENTIALS</a></li>
+                    <li><a href="crisis.html?id=d-autonomic">AUTONOMIC DYSREFLEXIA</a></li>
+                    <li><a href="crisis.html?id=d-stroke">STROKE</a></li>
+                    <li>
+                        <span style="display: block; padding: 4px 6px 0;">ANEURYSM RUPTURE</span>
+                        <a href="crisis.html?id=d-aneurysm-ir" style="padding-left: 15px;">ANEURYSM RUPTURE - IR SUITE</a>
+                        <a href="crisis.html?id=d-aneurysm-ot" style="padding-left: 15px;">ANEURYSM RUPTURE - OPERATING THEATRE</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Syringe Barrel -->
+                    <rect x="9" y="8" width="6" height="10" rx="1" />
+                    <!-- Needle -->
+                    <line x1="12" y1="2" x2="12" y2="8" />
+                    <!-- Plunger Rod -->
+                    <line x1="12" y1="18" x2="12" y2="22" />
+                    <!-- Plunger Handle -->
+                    <line x1="9" y1="22" x2="15" y2="22" />
+                    <!-- Finger Flanges -->
+                    <line x1="7" y1="18" x2="17" y2="18" />
+                    <!-- Measurement Marks -->
+                    <line x1="9" y1="10" x2="11" y2="10" />
+                    <line x1="9" y1="12" x2="11" y2="12" />
+                    <line x1="9" y1="14" x2="11" y2="14" />
+                    <line x1="9" y1="16" x2="11" y2="16" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tile 4: E -->
+        <div class="tile tile-e" tabindex="0">
+            <div class="tile-content">
+                <h2>Extras</h2>
+                <ul class="crisis-list" data-no-sort="true">
+                    <li><a href="crisis.html?id=e-hyperkalaemia">HYPERKALAEMIA</a></li>
+                    <li><a href="crisis.html?id=e-thyroid">THYROID STORM</a></li>
+                    <li>
+                        <span style="display: block; padding: 4px 6px 0;">FIRE</span>
+                        <a href="crisis.html?id=e-fire" style="padding-left: 15px;">FIRE IN THEATRE</a>
+                        <a href="crisis.html?id=ab-fire" style="padding-left: 15px;">AIRWAY FIRE</a>
+                    </li>
+                        <li><a href="crisis.html?id=e-last">LOCAL ANAESTHETIC SYSTEMIC TOXICITY (LAST)</a></li>
+                    <li><a href="crisis.html?id=e-mh">MALIGNANT HYPERTHERMIA (MH)</a></li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tile 5: O/P -->
+        <div class="tile tile-op" tabindex="0">
+            <div class="tile-content">
+                <h2>Obstetrics / Paeds</h2>
+                <ul class="crisis-list" data-no-sort="true">
+                    <li><a href="crisis.html?id=o-pph">PRIMARY POST PARTUM HAEMORRHAGE (PPH)</a></li>
+                    <li><a href="crisis.html?id=ab-laryngospasm">LARYNGOSPASM</a></li>
+                    <li><a href="crisis.html?id=o-eclampsia">ECLAMPSIA / MATERNAL SEIZURE</a></li>
+                    <li><a href="crisis.html?id=o-arrest">MATERNAL COLLAPSE / ARREST</a></li>
+                    <li><a href="crisis.html?id=p-neonatal">NEONATAL ALS</a></li>
+                    <li><a href="crisis.html?id=p-arrest">PAEDIATRIC CARDIAC ARREST / PALS</a></li>
+                    <li><a href="crisis.html?id=p-cico">CICO (PAED)</a></li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Nipple -->
+                    <path d="M 10 5 C 10 2 14 2 14 5" />
+                    <!-- Cap/Ring -->
+                    <rect x="8" y="5" width="8" height="3" rx="1" />
+                    <!-- Bottle body -->
+                    <path d="M 8.5 8 L 8 19 C 8 20.5 9 21.5 12 21.5 C 15 21.5 16 20.5 16 19 L 15.5 8" />
+                    <!-- Measurement marks -->
+                    <line x1="10" y1="11" x2="12" y2="11" />
+                    <line x1="10" y1="14" x2="11" y2="14" />
+                    <line x1="10" y1="17" x2="12" y2="17" />
+                </svg>
+            </div>
+        </div>
+        <!-- Tile 6: Blank -->
+        <div class="tile tile-blank" tabindex="0">
+            <div class="tile-content">
+                <h2>Resources</h2>
+                <ul class="crisis-list">
+                    <li><a href="crisis.html?id=r-about">ABOUT</a></li>
+                    <li><a href="crisis.html?id=r-credited">CREDITED RESOURCES</a></li>
+                    <li><a href="crisis.html?id=r-paeds-params">PAEDIATRIC PARAMETERS BY WEIGHT</a></li>
+                </ul>
+            </div>
+            <div class="tile-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Your feedback valued: <br><br> <a href="mailto:gascrisis@proton.me"><span>gascrisis@proton.me</span></a></p>
+    </footer>
+
+    <!-- Disclaimer Gate Modal -->
+    <div id="disclaimer-modal" class="modal disclaimer-overlay">
+        <div class="modal-content disclaimer-content">
+            <h2 id="disclaimer-title">Disclaimer</h2>
+            <div id="disclaimer-body">
+                <p>Welcome to <strong>GasCrisis.net</strong>.</p>
+                <p>This website is intended for use by anaesthesia and critical care physicians.</p>
+                <p><strong>Important:</strong> The information provided here is for educational purposes
+                    only and does NOT substitute for institutional guideline/policies or context dependent clinical decision making.</p>
+                <p>By entering this site, you acknowledge these terms.</p>
+            </div>
+            <button id="agree-btn" class="primary-btn">I Agree - Enter Site</button>
+        </div>
+    </div>
+
+    <script src="clinicalData.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

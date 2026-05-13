@@ -1,0 +1,14 @@
+# Gemini AI Agent Internal Directories
+/annotations/
+/brain/
+/browser_recordings/
+/context_state/
+/conversations/
+/html_artifacts/
+/implicit/
+/knowledge/
+/playground/
+/prompting/
+/installation_id
+/mcp_config.json
+/*.pb

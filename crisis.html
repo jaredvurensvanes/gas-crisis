@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Mode - GasCrisis.net</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="crisis-page">
+    <div class="top-bar">
+        <header class="app-header">
+            <h1><a href="index.html" class="logo-link">gas<span>crisis.net</span></a></h1>
+        </header>
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Dashboard
+        </a>
+    </div>
+
+    <main class="crisis-container">
+        <header class="crisis-header">
+            <h1 id="crisis-title">Loading...</h1>
+        </header>
+
+        <div id="crisis-content" class="crisis-body">
+            <!-- Content injected here via JS -->
+            <p>Fetching clinical data...</p>
+        </div>
+    </main>
+
+    <!-- Disclaimer Gate Modal -->
+    <div id="disclaimer-modal" class="modal disclaimer-overlay">
+        <div class="modal-content disclaimer-content">
+            <h2 id="disclaimer-title">Disclaimer</h2>
+            <div id="disclaimer-body">
+                <p>Welcome to <strong>GasCrisis.net</strong>.</p>
+                <p>This website is intended as a quick reference tool for trained medical professionals managing
+                    anaesthesia-related crises.</p>
+                <p><strong>Important:</strong> The information provided here is for educational and reference purposes
+                    only and does NOT substitute for formal clinical training, institutional guidelines, or professional
+                    medical judgement.</p>
+                <p>By entering this site, you acknowledge that you have read and understood this disclaimer.</p>
+            </div>
+            <button id="agree-btn" class="primary-btn">I Agree - Enter Site</button>
+        </div>
+    </div>
+
+    <script src="clinicalData.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
