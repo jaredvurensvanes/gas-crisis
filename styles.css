@@ -31,14 +31,14 @@
 }
 
 a {
-    text-decoration: none;
-    color: #38bdf8; /* Subtle blue */
+    text-decoration: underline;
+    color: inherit;
     transition: color 0.2s, background-color 0.2s;
 }
 
 a:hover {
-    color: #bae6fd; /* Lighter blue on hover */
-    background-color: rgba(56, 189, 248, 0.1); /* Very subtle blue background */
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.1); /* Very subtle white background */
     border-radius: 4px;
 }
 
@@ -99,13 +99,13 @@ body {
 /* Mobile header sizing */
 @media (max-width: 768px) {
     .app-header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 480px) {
     .app-header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -143,6 +143,14 @@ body {
     }
 }
 
+/* Mobile back-link sizing */
+@media (max-width: 768px) {
+    .back-link {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
 .back-link:hover {
     background-color: var(--color-c); /* Switch to alert red on hover */
     border-color: var(--color-c-hover);
@@ -165,13 +173,13 @@ body {
 /* Mobile search bar */
 @media (max-width: 768px) {
     .search-container {
-        width: 200px;
+        width: 250px;
     }
 }
 
 @media (max-width: 480px) {
     .search-container {
-        width: 150px;
+        width: 220px;
     }
 }
 
@@ -496,14 +504,14 @@ body {
 /* Mobile tile heading */
 @media (max-width: 768px) {
     .tile-content h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.75rem;
+        margin-bottom: 0.65rem;
     }
 }
 
 @media (max-width: 480px) {
     .tile-content h2 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -540,6 +548,19 @@ body {
     color: white;
     font-weight: 700;
     box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* Mobile crisis list spacing */
+@media (max-width: 768px) {
+    .crisis-list {
+        line-height: 1.05;
+    }
+    .crisis-list li {
+        margin-bottom: -6px;
+    }
+    .crisis-list a {
+        padding: 0 6px;
+    }
 }
 
 .tile-o .crisis-list a.highlight {
@@ -791,6 +812,35 @@ body {
     transform: translateY(0);
 }
 
+.cico-inline-btn {
+    text-decoration: none !important;
+    padding: 0.1rem 0.6rem !important;
+    font-size: 0.85rem !important;
+    margin-left: 0.4rem !important;
+    display: inline-block !important;
+    min-height: 0 !important; /* Override mobile min-height */
+    height: auto !important;
+    border: 1px solid currentColor !important;
+    vertical-align: middle !important;
+    line-height: 1.2 !important;
+    margin-top: -3px !important;
+}
+
+.title-cico-btn {
+    font-size: 0.4em;
+    padding: 0.4rem 1rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+    text-decoration: none !important;
+    border: 1px solid currentColor;
+}
+
+.mobile-text { display: none; }
+@media (max-width: 768px) {
+    .desktop-text { display: none; }
+    .mobile-text { display: inline; }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -832,7 +882,7 @@ body {
 }
 
 #crisis-title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 800;
     color: var(--color-c); /* Changed to red for all slide titles */
     letter-spacing: -0.02em;
@@ -841,14 +891,18 @@ body {
 
 /* Mobile crisis title */
 @media (max-width: 768px) {
+    .crisis-header {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
     #crisis-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 480px) {
     #crisis-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 }
 
@@ -874,8 +928,32 @@ body {
     .crisis-body > .crisis-section {
         order: 1;
     }
-    .crisis-body > .supplementary-box {
+    .crisis-body > .supplementary-box,
+    .crisis-body > .supplementary-box-left {
         order: 2;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    #adult-als-drugs-dosing,
+    .mobile-bottom {
+        order: 3;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0 !important;
+    }
+    .crisis-body [style*="font-weight: 900"],
+    .crisis-section h3 {
+        line-height: 1.2 !important;
+    }
+    .tachy-causes-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-top: 1rem !important;
+        text-align: left !important;
+    }
+    .responsive-grid-2 {
+        grid-template-columns: 1fr !important;
     }
 }
 
