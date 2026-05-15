@@ -2803,11 +2803,71 @@ const crisisData = {
     'r-formulary': { title: 'DRUG FORMULARY', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
     'r-rsi': { title: 'RSI CHECKLIST', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
     'r-about': {
-        title: 'DISCLAIMER',
+        title: 'ABOUT GASCRISIS.NET',
         content: `
-                <div style="margin-bottom: 2rem; padding: 1rem; background: rgba(56, 189, 248, 0.08); border-left: 4px solid rgb(56, 189, 248); border-radius: 0.5rem;">    
+            <div class="crisis-section">
+                <h2 style="color: var(--color-e); margin-bottom: 1.5rem; font-size: 1.3rem;">GasCrisis.net - Anaesthesia and Critical Care Crisis Manual</h2>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">What is GasCrisis.net?</h3>
+                    <p style="color: #f8fafc; line-height: 1.6; margin-bottom: 1rem;">
+                        GasCrisis.net is a comprehensive, evidence-based crisis management resource designed specifically for anaesthetists and critical care clinicians.
+                        This digital manual provides rapid access to critical information during anaesthetic emergencies, combining clinical guidelines with practical management strategies.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Purpose & Design</h3>
+                    <ul style="color: #f8fafc; line-height: 1.6;">
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--color-e);">Rapid Access:</strong> Pertinent information is organised for quick navigation during crises</li>
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--color-e);">Evidence-Based:</strong> Content derived from current guidelines and peer-reviewed literature</li>
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--color-e);">Practical Focus:</strong> Emphasises actionable steps and cognitive aids for time-critical situations</li>
+                        <li style="margin-bottom: 0.8rem;"><strong style="color: var(--color-e);">Mobile-Optimised:</strong> Designed for use on desktops, tablets and smartphones in clinical environments</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Target Audience</h3>
+                    <p style="color: #f8fafc; line-height: 1.6; margin-bottom: 1rem;">
+                        This resource is intended for anaesthesiology and critical care clinicians involved in the management of anaesthetic crises. It is not a substitute for clinical judgment or institutional protocols.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">How to Use</h3>
+                    <ul style="color: #f8fafc; line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;">Navigate using the main dashboard tiles or search function</li>
+                        <li style="margin-bottom: 0.5rem;">Structured stepwise formatting is provided where relevant but not exclusively for all topics</li>
+                        <li style="margin-bottom: 0.5rem;">Cross-reference related topics using embedded links</li>
+                        <li style="margin-bottom: 0.5rem;">An effort has been made to provide relevant, concise information for quick reference by experienced clinicians ie. finer details or expected knowledge is often omitted for brevity</li>
+                        
+                        
+
+
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem; padding: 1rem; background: rgba(56, 189, 248, 0.08); border-left: 4px solid rgb(56, 189, 248); border-radius: 0.5rem;">
+                    <h3 style="color: rgb(56, 189, 248); margin-bottom: 0.8rem; font-size: 1.1rem;">⚠️ Important Disclaimer</h3>
                     <p style="color: #f8fafc; line-height: 1.6; margin: 0; font-size: 0.95rem;">
-                        Upon entering this website, you acknowledge and agree to these terms: This resource is intended solely for use by anesthesia and critical care professionals and is provided for training and educational purposes only. It is not intended as a substitute for professional medical judgment, diagnosis, or treatment, and should not replace the opinion of a qualified medical professional. Efforts are made to ensure the information presented is current and accurate, however, no guarantees are provided regarding its absolute completeness or veracity. Visitors utilise this resource at thier own discretion. The creator, Jared Vurens Van Es, disclaims all liability resulting from decisions made based on the content within.
+                        <strong>This resource is for educational and reference purposes only.</strong> It does not constitute medical advice and should not replace
+                        clinical judgment, institutional protocols, or consultation with senior colleagues. Always follow your local hospital policies
+                        and guidelines. The authors and contributors accept no liability for any consequences arising from the use of this information.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Version & Updates</h3>
+                    <p style="color: #f8fafc; line-height: 1.6; margin: 0;">
+                        Current Version: 1.0 (April 2026)<br>
+                        Content is regularly reviewed and updated based on current evidence and guidelines.<br>
+                        Last updated: April 16, 2026
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="color: #f8fafc; font-size: 0.9rem; margin: 0;">
+                        GasCrisis.net © 2026 | Designed for anaesthesia crisis management
                     </p>
                 </div>
             </div>
