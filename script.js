@@ -11,7 +11,7 @@ function getClinicalParams(inputWeight) {
 const crisisData = {
     // A/B
     'ab-CICO': {
-        title: 'CICO (ADULT) <br><a href="crisis.html?id=p-cico" class="primary-btn title-cico-btn">GO TO<br>CICO PAED</a>',
+        title: 'CICO (ADULT) <br><a href="crisis.html?id=p-cico" class="primary-btn" style="font-size: 0.4em; padding: 0.4rem 1rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CICO PAED</a>',
         content: `
             <style>
                 .cico-box li {
@@ -41,23 +41,23 @@ const crisisData = {
                 }
             </style>
             <div class="crisis-section alert-box cico-box">
-                <span style="font-weight: 900; font-size: 1.2rem; display: block; margin-bottom: 1rem; color: var(--color-e); text-transform: uppercase;">IMMEDIATE ACTIONS</span>
+                <span class="crisis-section-header">IMMEDIATE ACTIONS</span>
                 <ul>
                     <li>CALL FOR HELP / EARLY ENT</li>
                     <li>CONTINUE SUPRAGLOTTIC OXYGENATION ATTEMPTS</li>
                     <li>POSITION PATIENT (NECK EXTENDED / SHOULDERS ELEVATED)</li>
                 </ul>
-                <span style="font-weight: 900; font-size: 1.2rem; display: block; margin: 1.5rem 0 1rem 0; color: var(--color-e); text-transform: uppercase;">PROCEED WITH CLINICIAN PREFERRED TECHNIQUE AS BELOW</span>
-                <div style="margin: 1.5rem 0 0.8rem 0;">
-                    <div style="color: var(--color-c); font-size: 1.15rem; font-weight: 900; text-transform: uppercase; line-height: 1.1;">FAILED INITIAL TECHNIQUE</div>
-                    <div style="display: flex; align-items: center; margin-left: 0.4rem; margin-top: 0.4rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-c)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M 8 2 L 8 12 Q 8 18 14 18 L 22 18" /><polyline points="17 13 22 18 17 23" /></svg>
-                        <div style="color: var(--color-c); font-size: 1rem; font-weight: 800; text-transform: uppercase; line-height: 1.1;">ASSESS NECK ANATOMY (PALPABLE VS IMPALPABLE)</div>
+                <span class="crisis-section-header" style="margin: 1.5rem 0 1rem 0;">PROCEED WITH CLINICIAN PREFERRED TECHNIQUE AS BELOW</span>
+                <div style="margin: 1rem 0 0.8rem 0;">
+                    <div class="failed-technique">FAILED INITIAL TECHNIQUE</div>
+                    <div style="display: flex; align-items: center; margin-left: 0.4rem; margin-top: 0.2rem;">
+                        <div class="arrow-icon"></div>
+                        <div class="failed-technique">ASSESS NECK ANATOMY (PALPABLE VS IMPALPABLE)</div>
                     </div>
                 </div>
 
                 <div class="cico-branch">
-                    <div style="font-weight: 900; color: rgb(56, 189, 248); font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <div class="cico-branch-header">
                         PALPABLE
                     </div>
                     <ul style="margin-left: 1.5rem;">
@@ -146,7 +146,7 @@ const crisisData = {
                     <li>ENSURE TIME / SATS + CO2 AWARENESS (ALLOCATE TEAM MEMBER)</li>
                     <li>CONSIDER WAKING PATIENT</li>
                     <li>OPTIMISE ANAESTHETIC DEPTH + MUSCLE RELAXATION</li>
-                    <li>EARLY MOBILISATION OF <a href="crisis.html?id=ab-CICO">CICO</a> EQUIPMENT (COGNITIVE PRIMING)</li>
+                    <li>EARLY MOBILISATION OF <a href="crisis.html?id=ab-CICO" style="text-decoration: underline;">CICO</a> EQUIPMENT (COGNITIVE PRIMING)</li>
                     <li>MAXIMUM 3 OPTIMISED ATTEMPTS + 1 (MORE EXPERIENCED OPERATOR) AT:</li>
                         <ul>
                             <li>1. ENDOTRACHAL INTUBATION</li>
@@ -160,7 +160,7 @@ const crisisData = {
                 </ul>
                 <span style="font-weight: 900; font-size: 1.2rem; display: block; margin: 1.5rem 0 1rem 0; color: var(--color-e); text-transform: uppercase;">FAILURE TO RESCUE AIRWAY / MAINTAIN OXYGENATION</span>
                 <ul>
-                    <li>PROCEED TO <a href="crisis.html?id=ab-CICO" class="primary-btn cico-inline-btn">CICO</a></li>
+                    <li>PROCEED TO <a href="crisis.html?id=ab-CICO" style="text-decoration: underline;">CICO</a></li>
                 </ul>
             </div>
         `
@@ -196,7 +196,7 @@ const crisisData = {
             </div>
         `
     },
-    'avb-cuff-leak': { title: 'CUFF LEAK', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'ab-bronchospasm': {
         title: 'BRONCHOSPASM',
         content: `
@@ -493,7 +493,7 @@ const crisisData = {
             </div>
         `
     },
-    'ab-fire': { title: 'FIRE - AIRWAY', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'ab-NECK HAEMATOMA POST THYROID SURGERY': {
         title: 'NECK HAEMATOMA POST THYROID SURGERY',
         content: `
@@ -516,7 +516,7 @@ const crisisData = {
                         </div>
                     </li>
                     <li>IF AIRWAY COMPROMISE PERSISTS POST HAEMATOMA EVACUATION &rarr; CONVENTIONAL RSI FROM ABOVE</li>
-                    <li>UNSUCCESSFUL &rarr; PROCEED TO FONA / <a href="crisis.html?id=ab-CICO" class="primary-btn cico-inline-btn">CICO</a></li>
+                    <li>UNSUCCESSFUL &rarr; PROCEED TO FONA / <a href="crisis.html?id=ab-CICO" style="text-decoration: underline;">CICO</a></li>
                 </ul>
 
                 <span style="font-weight: 900; font-size: 1.2rem; display: block; margin: 1.5rem 0 1rem 0; color: var(--color-e); text-transform: uppercase;">PAUSE AND PLAN</span>
@@ -813,7 +813,7 @@ const crisisData = {
     },
 
     // C
-    'c-aicd': { title: 'AICD MALFUNCTION / INTERFERENCE', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'c-anaphylaxis': {
         title: 'ANAPHYLAXIS',
         content: `
@@ -935,7 +935,7 @@ const crisisData = {
         `
     },
     'c-cardiac-arrest': {
-        title: 'ADULT CARDIAC ARREST / ALS <br><a href="crisis.html?id=p-arrest" class="primary-btn title-cico-btn"><span class="desktop-text">GO TO PAED ALS</span><span class="mobile-text">GO TO<br>PAED ALS</span></a>',
+        title: 'ADULT CARDIAC ARREST / ALS <br><a href="crisis.html?id=p-arrest" class="primary-btn" style="font-size: 0.4em; padding: 0.4rem 1rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO PAED ALS</a>',
         content: `
             <div class="supplementary-box als-box" style="top: 45%;">
                 <strong>CORRECTIBLE CAUSES (4Hs & Ts)</strong>
@@ -986,12 +986,12 @@ const crisisData = {
                     <li><a href="crisis.html?id=c-anaphylaxis" style="text-decoration: underline;">ANAPHYLAXIS</a></li>
                     <li>TRAUMA
                         <ul>
-                            <li>↓CPR PRIORITY - PRIORITISE:
+                            <li>PRIORITISE AS REQUIRED:
                                 <ul>
                                     <li>HAEMORRHAGE CONTROL</li>
-                                    <li>AIRWAY SECUREMENT</li>
-                                    <li>CHEST DECOMPRESSION / PERICARDIOCENTESIS / RESUSCITATIVE THORACOTOMY</li>
-                                    <li>RESTORATION OF CIRCULATING VOLUME</li>
+                                    <li>AIRWAY PATENCY (MANOUVERS +/- ETT / LMA / <a href="crisis.html?id=ab-CICO" style="text-decoration: underline;">FONA</a>)</li>
+                                    <li>BREATHING (VENTIALTION, CHEST DECOMPRESSION, PERICARDIOCENTESIS, RESUSCITATIVE THORACOTOMY)</li>
+                                    <li>CIRCULATION (RESTORATION OF CIRCULATING VOLUME, PELVIC SPLINTING)</li>
                                 </ul>
                             </li>
                         </ul>
@@ -999,14 +999,14 @@ const crisisData = {
                     <li><a href="crisis.html?id=o-arrest" style="text-decoration: underline;">PREGNANCY</a></li>
                     <li>HYPOTHERMIA
                         <ul>
-                            <li>ANTICIPATE PROLONGED RESUSCITATION
+                            <li>ANTICIPATE PROLONGED RESUSCITATION:
                                 <ul>
                                     <li>MECHANICAL CPR</li>
                                     <li>ACTIVE REWARMING</li>
                                     <li>ECMO CONSIDERATION</li>
                                 </ul>
                             </li>
-                            <li>IF ↓RESPONSE TO SHOCK + Vf - WH UNTIL &gt; 30°C</li>
+                            <li>IF NO RESPONSE TO SHOCK + Vf - WH UNTIL &gt; 30°C</li>
                             <li>ADRENALINE - WH UNTIL &gt; 30°C, X2 DOSING INTERVALS 30-34°C</li>
                         </ul>
                     </li>
@@ -1088,7 +1088,7 @@ const crisisData = {
         `
     },
     'c-cals': {
-        title: 'ARREST POST CARDIAC SURGERY / CALS',
+        title: 'ARREST POST CARDIAC SURGERY',
         content: `
             <div class="crisis-section alert-box">
                 <span style="font-weight: 900; font-size: 1.2rem; display: block; margin-bottom: 1rem; color: var(--color-e); text-transform: uppercase;">IMMEDIATE ACTIONS</span>
@@ -1288,7 +1288,7 @@ const crisisData = {
     'c-tachycardia': {
         title: 'TACHYCARDIA',
         content: `
-            <div class="supplementary-box tachy-causes-box" style="width: 35%; max-width: 250px; float: right; margin-left: 20px;">
+            <div class="supplementary-box" style="width: 35%; max-width: 250px; float: right; margin-left: 20px;">
                 <strong style="color: var(--color-e);">CAUSES</strong>
                 <ul style="margin-bottom: 0.5rem; margin-top: 10px;">
                     <li style="font-weight: bold; margin-bottom: 0.2rem;">PRIMARY</li>
@@ -1374,12 +1374,12 @@ const crisisData = {
                     <div style="font-weight: 900; font-size: 1.1rem; color: rgb(56, 189, 248); margin-bottom: 0.6rem;">IRREGULAR</div>
                     <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.95rem; color: #f8fafc;">
                         <li style="margin-bottom: 0.4rem;">AFIB WITH BBB (ABERANCY) &rarr; MX AS PER NARROW COMPLEX IRREGULAR</li>
-                        <li style="margin-bottom: 0.4rem;">AFIB WITH PRE-EXCITATION (WPW) &rarr; CARDIOVERSION (SAFEST) - CONSIDER AMIODARONE (SEEK ADVICE) - AVOID AV-NODAL BLOCKING AGENTS (ADENOSINE, DIGOXIN, VERAPAMIL / DILTIAZEM)</li>
+                        <li style="margin-bottom: 0.4rem;">AFIB WITH PRE-EXCITATION (WPW) - CARDIOVERSION (SAFEST) - CONSIDER AMIODARONE (SEEK ADVICE) - AVOID AV-NODAL BLOCKING AGENTS (ADENOSINE, DIGOXIN, VERAPAMIL / DILTIAZEM)</li>
                         <li>POLYMORPHIC VT (TORSADES)
                             <ul style="margin-top: 0.4rem; list-style-type: disc; padding-left: 1.5em;">
                                 <li style="margin-bottom: 0.4rem;">MAGNESIUM SULFATE, AVOID AMIODARONE</li>
-                                <li style="margin-bottom: 0.4rem;">2ND TO AV BLOCK WITH BRADYCARDIA &rarr; TRANSCUTANEOUS / TRANSVENOUS PACING</li>
-                                <li style="margin-bottom: 0.4rem;">REFRACTORY CASES &rarr; CONSULT CARDIOLOGY FOR OVERDRIVE PACING, ISOPRENALINE, OR BLOCK AND PACE</li>
+                                <li style="margin-bottom: 0.4rem;">2ND TO AV BLOCK WITH BRADYCARDIA: TRANSCUTANEOUS / TRANSVENOUS PACING</li>
+                                <li style="margin-bottom: 0.4rem;">REFRACTORY CASES: CONSULT CARDIOLOGY FOR OVERDRIVE PACING, ISOPRENALINE, OR BLOCK AND PACE</li>
                                 <li style="margin-bottom: 0.4rem;">CONSIDER LIGNOCAINE</li>
                                 <li style="margin-bottom: 0.4rem;">CORRECT ELECTROLYTE IMBALANCES</li>
                                 <li style="margin-bottom: 0.4rem;">CEASE QT PROLONGING AGENTS</li>
@@ -1611,8 +1611,7 @@ const crisisData = {
             </div>
         `
     },
-    'c-tachy-broad': { title: 'TACHYCARDIA - BROAD COMPLEX', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
-    'c-tachy-narrow': { title: 'TACHYCARDIA - NARROW COMPLEX', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
 
     // D
     'd-aneurysm-ir': {
@@ -1689,7 +1688,7 @@ const crisisData = {
                     </li>
                 </ul>
 
-                <h3 style="margin-top: 1.5rem; color: white; font-size: 1rem;">RUPTURE POST DURAL OPENING</h3>
+                <h3 style="margin-top: 1.5rem; color: white; font-size: 1rem;">RUPTURE AFTER DURAL OPENING</h3>
                 <ul>
                     <li>TOLERATE LOW MAP ~50</li>
                     <li>CONSIDER FLOW ARREST (0.5MG/KG ADENOSINE)</li>
@@ -1708,7 +1707,7 @@ const crisisData = {
                     <li>ABCDE CHECK</li>
                     <li>REMOVE INCITING STIMULUS
                         <ul>
-                            <li>PAUSE SURGERY</li>
+                            <li>HALT SURGERY</li>
                             <li>CHECK / EMPTY BLADDER (OR CATHETER)</li>
                             <li>CHECK FOR BOWEL IMPACTION</li>
                             <li>EXAMINE FOR NOCICEPTIVE STIMULI (PRESSURE AREAS, TIGHT CLOTHING, WOUND DRESSINGS)</li>
@@ -1816,9 +1815,9 @@ const crisisData = {
             <div class="supplementary-box" style="top: 50%; transform: translateY(-50%);">
                 <strong style="color: var(--color-e);">DRUG DOSES</strong>
                 <ul>
-                    <li>METARAMINOL 0.5-1MG IV BOLUS</li>
-                    <li>EPHEDRINE 6-12MG IV BOLUS</li>
-                    <li>PHENYLEPHRINE 50-200MCG IV BOLUS</li>
+                    <li>METARAMINOL 1MG IV BOLUS</li>
+                    <li>EPHEDRINE 9MG IV BOLUS</li>
+                    <li>PHENYLEPHRINE 100MCG IV BOLUS</li>
                     <li>ATROPINE 600MCG IV</li>
                 </ul>
             </div>
@@ -2155,7 +2154,7 @@ const crisisData = {
             </div>
         `
     },
-    'e-hyponatraemia': { title: 'HYPONATRAEMIA', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'ab-fire': {
         title: 'AIRWAY FIRE',
         content: `
@@ -2208,7 +2207,7 @@ const crisisData = {
             </div>
         `
     },
-    'e-serotonin': { title: 'SEROTONIN SYNDROME', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'e-thyroid': {
         title: 'THYROID STORM',
         content: `
@@ -2289,7 +2288,7 @@ const crisisData = {
             </div>
         `
     },
-    'e-mri': { title: 'MRI CATASTROPHE', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
 
     // O
     'o-eclampsia': {
@@ -2365,7 +2364,7 @@ const crisisData = {
                 </ul>
 
                 <span id="pregnancy-specific-correctible-causes" style="font-weight: 900; font-size: 1.2rem; display: block; margin: 1.5rem 0 1rem 0; color: #22c55e; text-transform: uppercase;">SPECIFIC CAUSES</span>
-                <div class="responsive-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem;">
                     <div style="background: rgba(56, 189, 248, 0.08); border-left: 4px solid rgb(56, 189, 248); padding: 1.2rem; border-radius: 0.5rem;">
                         <div style="font-weight: 900; font-size: 1rem; color: rgb(56, 189, 248); margin-bottom: 0.6rem;">COMMON CAUSES<br><span style="font-size: 0.85rem; font-weight: 700;">DELIVERY LESS LIKELY</span></div>
                         <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.95rem;">
@@ -2405,7 +2404,7 @@ const crisisData = {
                     </div>
                 </div>
             </div>
-            <div class="mobile-bottom" style="background-color: rgba(59, 130, 246, 0.1); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 0.8rem; padding: 1.2rem; margin-top: 1.5rem;">
+            <div style="background-color: rgba(59, 130, 246, 0.1); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 0.8rem; padding: 1.2rem; margin-top: 1.5rem;">
                 <strong style="display: block; font-size: 1rem; margin-bottom: 0.8rem; color: var(--color-e);">DRUGS & DOSING</strong>
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
                     <div style="background: rgba(255,255,255,0.03); border-radius: 0.5rem; padding: 0.6rem;">
@@ -2478,7 +2477,7 @@ const crisisData = {
 
     // P
     'p-arrest': {
-        title: 'PAEDIATRIC CARDIAC ARREST / PALS <br><a href="crisis.html?id=c-cardiac-arrest" class="primary-btn title-cico-btn"><span class="desktop-text">GO TO ADULT ALS</span><span class="mobile-text">GO TO<br>ADULT ALS</span></a>',
+        title: 'PAEDIATRIC CARDIAC ARREST / PALS <br><a href="crisis.html?id=c-cardiac-arrest" class="primary-btn" style="font-size: 0.4em; padding: 0.4rem 1rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO ADULT ALS</a>',
         content: `
             <div class="supplementary-box als-box" style="top: 45%;">
                 <strong>CORRECTIBLE CAUSES (4Hs & Ts)</strong>
@@ -2529,12 +2528,12 @@ const crisisData = {
                     <li><a href="crisis.html?id=c-anaphylaxis" style="text-decoration: underline;">ANAPHYLAXIS</a></li>
                     <li>TRAUMA
                         <ul>
-                            <li>↓CPR PRIORITY - PRIORITISE:
+                            <li>PRIORITISE AS REQUIRED:
                                 <ul>
                                     <li>HAEMORRHAGE CONTROL</li>
-                                    <li>AIRWAY SECUREMENT</li>
-                                    <li>CHEST DECOMPRESSION / PERICARDIOCENTESIS / RESUSCITATIVE THORACOTOMY</li>
-                                    <li>RESTORATION OF CIRCULATING VOLUME</li>
+                                    <li>AIRWAY PATENCY (MANOUVERS +/- ETT / LMA / <a href="crisis.html?id=p-cico" style="text-decoration: underline;">FONA</a>)</li>
+                                    <li>BREATHING (VENTILATION, CHEST DECOMPRESSION, PERICARDIOCENTESIS, RESUSCITATIVE THORACOTOMY)</li>
+                                    <li>CIRCULATION (RESTORATION OF CIRCULATING VOLUME, PELVIC SPLINTING)</li>
                                 </ul>
                             </li>
                         </ul>
@@ -2542,7 +2541,7 @@ const crisisData = {
 
                     <li>HYPOTHERMIA
                         <ul>
-                            <li>ANTICIPATE PROLONGED RESUSCITATION
+                            <li>ANTICIPATE PROLONGED RESUSCITATION:
                                 <ul>
                                     <li>MECHANICAL CPR</li>
                                     <li>ACTIVE REWARMING</li>
@@ -2574,7 +2573,7 @@ const crisisData = {
                     </li>
                 </ul>
             </div>
-            <div class="mobile-bottom" style="background-color: rgba(59, 130, 246, 0.1); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 0.8rem; padding: 1.2rem; margin-top: 1.5rem;">
+            <div style="background-color: rgba(59, 130, 246, 0.1); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 0.8rem; padding: 1.2rem; margin-top: 1.5rem;">
                 <strong style="display: block; font-size: 1rem; margin-bottom: 0.8rem; color: var(--color-e);">DRUGS & DOSING</strong>
                 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
                     <div style="background: rgba(255,255,255,0.03); border-radius: 0.5rem; padding: 0.6rem;">
@@ -2701,9 +2700,9 @@ const crisisData = {
             </div>
         `
     },
-    'p-tet': { title: 'TET SPELL', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'p-cico': {
-        title: 'CICO (PAED) <br><a href="crisis.html?id=ab-CICO" class="primary-btn title-cico-btn">GO TO<br>CICO ADULT</a>',
+        title: 'CICO (PAED) <br><a href="crisis.html?id=ab-CICO" class="primary-btn" style="font-size: 0.4em; padding: 0.4rem 1rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CICO ADULT</a>',
         content: `
             <style>
                 .cico-box li {
@@ -2740,15 +2739,15 @@ const crisisData = {
                     <li>POSITION PATIENT (NECK EXTENSION +/- SHOULDER ROLL)</li>
                 </ul>
                 <h3 style="color: #22c55e; font-size: 1.15rem; margin: 2rem 0 1rem 0; font-weight: 900; text-transform: uppercase;">FIRST LINE - CANNULA TECHNIQUE AS BELOW</h3>
-                <div style="margin: 1.5rem 0 0.8rem 0;">
-                    <div style="color: var(--color-c); font-size: 1.15rem; font-weight: 900; text-transform: uppercase; line-height: 1.1;">FAILED CANNULA TECHNIQUE</div>
-                    <div style="display: flex; align-items: center; margin-left: 0.4rem; margin-top: 0.4rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-c)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M 8 2 L 8 12 Q 8 18 14 18 L 22 18" /><polyline points="17 13 22 18 17 23" /></svg>
-                        <div style="color: var(--color-c); font-size: 1rem; font-weight: 800; text-transform: uppercase; line-height: 1.1;">ASSESS NECK ANATOMY (PALPABLE VS IMPALPABLE)</div>
+                <div style="margin: 1rem 0 0.8rem 0;">
+                    <div style="color: #e03030; font-size: 1.15rem; font-weight: 900; text-transform: uppercase; line-height: 1.1;">FAILED CANNULA TECHNIQUE</div>
+                    <div style="display: flex; align-items: center; margin-left: 0.4rem; margin-top: 0.2rem;">
+                        <div class="arrow-icon"></div>
+                        <div class="failed-technique">ASSESS NECK ANATOMY (PALPABLE VS IMPALPABLE)</div>
                     </div>
                 </div>
                 <div class="cico-branch">
-                    <div style="font-weight: 900; color: rgb(56, 189, 248); font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <div class="cico-branch-header">
                         PALPABLE
                     </div>
                     <ul style="margin-left: 1.5rem;">
@@ -2800,8 +2799,7 @@ const crisisData = {
     },
 
     // Resources
-    'r-formulary': { title: 'DRUG FORMULARY', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
-    'r-rsi': { title: 'RSI CHECKLIST', content: `<div class="crisis-section"><ul><li>Placeholder content... (to be filled)</li></ul></div>` },
+
     'r-about': {
         title: 'ABOUT GASCRISIS.NET',
         content: `
@@ -2812,7 +2810,7 @@ const crisisData = {
                     <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">What is GasCrisis.net?</h3>
                     <p style="color: #f8fafc; line-height: 1.6; margin-bottom: 1rem;">
                         GasCrisis.net is a comprehensive, evidence-based crisis management resource designed specifically for anaesthetists and critical care clinicians.
-                        This digital manual provides rapid access to critical information during anaesthetic emergencies, combining clinical guidelines with practical management strategies.
+                        This digital manual provides rapid access to critical information during anaesthetic emergencies, combining clinical guidelines with practical management steps.
                     </p>
                 </div>
 
@@ -2826,12 +2824,6 @@ const crisisData = {
                     </ul>
                 </div>
 
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Target Audience</h3>
-                    <p style="color: #f8fafc; line-height: 1.6; margin-bottom: 1rem;">
-                        This resource is intended for anaesthesiology and critical care clinicians involved in the management of anaesthetic crises. It is not a substitute for clinical judgment or institutional protocols.
-                    </p>
-                </div>
 
                 <div style="margin-bottom: 2rem;">
                     <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">How to Use</h3>
@@ -2839,7 +2831,7 @@ const crisisData = {
                         <li style="margin-bottom: 0.5rem;">Navigate using the main dashboard tiles or search function</li>
                         <li style="margin-bottom: 0.5rem;">Structured stepwise formatting is provided where relevant but not exclusively for all topics</li>
                         <li style="margin-bottom: 0.5rem;">Cross-reference related topics using embedded links</li>
-                        <li style="margin-bottom: 0.5rem;">An effort has been made to provide relevant, concise information for quick reference by experienced clinicians ie. finer details or expected knowledge is often omitted for brevity</li>
+                        <li style="margin-bottom: 0.5rem;">An effort has been made to provide relevant, concise information for quick reference by experienced clinicians ie. finer details often omitted for brevity</li>
                         
                         
 
@@ -2851,37 +2843,41 @@ const crisisData = {
                     <h3 style="color: rgb(56, 189, 248); margin-bottom: 0.8rem; font-size: 1.1rem;">⚠️ Important Disclaimer</h3>
                     <p style="color: #f8fafc; line-height: 1.6; margin: 0; font-size: 0.95rem;">
                         <strong>This resource is for educational and reference purposes only.</strong> It does not constitute medical advice and should not replace
-                        clinical judgment, institutional protocols, or consultation with senior colleagues. Always follow your local hospital policies
-                        and guidelines. The authors and contributors accept no liability for any consequences arising from the use of this information.
+                        clinical judgment, institutional protocols, or consultation with a medical professional. Efforts are made for accurancy and currency however no guarantees are provided. The authors and contributors accept no liability for any consequences arising from the use of this information. 
                     </p>
                 </div>
 
                 <div style="margin-bottom: 2rem;">
                     <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Version & Updates</h3>
                     <p style="color: #f8fafc; line-height: 1.6; margin: 0;">
-                        Current Version: 1.0 (April 2026)<br>
-                        Content is regularly reviewed and updated based on current evidence and guidelines.<br>
-                        Last updated: April 16, 2026
+                        Current Version: 1.0 (May 2026)<br>
+                        Last updated: May 17, 2026
                     </p>
                 </div>
 
                 <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
                     <p style="color: #f8fafc; font-size: 0.9rem; margin: 0;">
-                        GasCrisis.net © 2026 | Designed for anaesthesia crisis management
+                        GasCrisis.net © 2026 | Designed for anaesthetic crisis management
                     </p>
                 </div>
             </div>
         `
     },
     'r-paeds-params': {
-        title: 'PAEDIATRIC PARAMETERS BY WEIGHT',
+        title: 'PAEDIATRIC PARAMETERS BY AGE / WEIGHT',
         content: `
             <div class="crisis-section">
-                <div style="margin-bottom: 1.5rem;">
-                    <label for="weight-input" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">ENTER PATIENT WEIGHT (KG)</label>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;">
+                    <div>
+                        <label for="weight-input" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">WEIGHT (KG)</label>
                         <input type="number" id="weight-input" min="1" max="50" step="0.5" placeholder="e.g. 15" style="padding: 0.6rem 1rem; font-size: 1.1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: #f8fafc; width: 120px;" />
-                        <button id="calc-btn" style="padding: 0.6rem 1.2rem; font-size: 1rem; font-weight: 700; border-radius: 0.5rem; border: none; background: rgb(56, 189, 248); color: #0f172a; cursor: pointer;">CALCULATE</button>
+                    </div>
+                    <div>
+                        <label for="age-input" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">OR AGE (YRS)</label>
+                        <input type="number" id="age-input" min="0" max="16" step="0.1" placeholder="e.g. 5" style="padding: 0.6rem 1rem; font-size: 1.1rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.3); color: #f8fafc; width: 120px;" />
+                    </div>
+                    <div>
+                        <button id="calc-btn" style="padding: 0.6rem 1.2rem; font-size: 1rem; font-weight: 700; border-radius: 0.5rem; border: none; background: rgb(56, 189, 248); color: #0f172a; cursor: pointer; height: 45px;">CALCULATE</button>
                     </div>
                 </div>
                 <div id="params-result" style="display:none;">
@@ -2897,6 +2893,7 @@ const crisisData = {
         content: `
             <div class="crisis-section">
                 <ol style="list-style-type: none; padding-left: 0;">
+                    <li>Ambulance Victoria. Clinical Practice Guidelines [Internet]. Melbourne: Ambulance Victoria; [cited 2026]. Available from: https://www.ambulance.vic.gov.au/paramedics/clinical-practice-guidelines/</li>
                     <li>American Society of Anesthesiologists Task Force on Operating Room Fires. Practice advisory for the prevention and management of operating room fires: an updated report. Anesthesiology. 2013;118(2):271-290.</li>
                     <li>Anaesthetic Crisis Handbook [Internet]. New Zealand; [cited 2026 Apr 16]. Available from: https://anaestheticcrisishandbook.com/</li>
                     <li>Association of Anaesthetists. Quick Reference Handbook: Anaesthetic Emergencies. 3rd ed. London: Association of Anaesthetists; 2024.</li>
@@ -3015,6 +3012,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (crisisId === 'r-paeds-params') {
                 const calcBtn = document.getElementById('calc-btn');
                 const weightInput = document.getElementById('weight-input');
+                const ageInput = document.getElementById('age-input');
                 const resultDiv = document.getElementById('params-result');
                 const tableBody = document.getElementById('params-table-body');
 
@@ -3035,8 +3033,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 function runCalc() {
-                    const w = parseFloat(weightInput.value);
+                    let w = parseFloat(weightInput.value);
+                    const a = parseFloat(ageInput.value);
+                    
+                    // Clear weight input if it was automatically calculated previously 
+                    // and user has now typed a new age without a weight
+                    if (!weightInput.value && !isNaN(a)) {
+                        if (a < 1) {
+                            // < 1 year: (Age in months * 0.5) + 4
+                            w = ((a * 12) * 0.5) + 4;
+                        } else if (a <= 5) {
+                            // 1 - 5 years: (Age in years * 2) + 8
+                            w = (a * 2) + 8;
+                        } else {
+                            // 6 - 12 years: (Age in years * 3) + 7
+                            w = (a * 3) + 7;
+                        }
+                        // Update weight field to show calculated value
+                        weightInput.value = w.toFixed(1);
+                    }
+
                     if (!w || w <= 0) return;
+                    
+                    // Clear the age input if user just entered weight so we don't recalculate if they change weight later
+                    if (weightInput.value && !isNaN(w) && isNaN(a) && a !== 0) {
+                       // Do nothing, just use weight
+                    } else if (weightInput.value && !isNaN(w) && !isNaN(a)) {
+                        // User provided both. If they click calculate, we should use weight as source of truth.
+                        // Or if they wanted to re-calculate from age, they'd clear weight.
+                    }
+
                     const data = getClinicalParams(w);
                     tableBody.innerHTML = '';
                     for (const [key, label] of Object.entries(labels)) {
@@ -3050,7 +3076,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 calcBtn.addEventListener('click', runCalc);
-                weightInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') runCalc(); });
+                weightInput.addEventListener('keydown', (e) => { 
+                    if (e.key === 'Enter') runCalc(); 
+                });
+                weightInput.addEventListener('input', () => {
+                    ageInput.value = ''; // clear age if weight is manually entered
+                });
+                ageInput.addEventListener('keydown', (e) => { 
+                    if (e.key === 'Enter') runCalc(); 
+                });
+                ageInput.addEventListener('input', () => {
+                    weightInput.value = ''; // clear weight if age is manually entered
+                });
             }
         } else {
             if (crisisTitleEl) crisisTitleEl.textContent = 'Crisis Not Found';
