@@ -62,6 +62,12 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    body.crisis-page {
+        padding: 0.5rem;
+    }
+}
+
 .top-bar {
     width: 100%;
     max-width: 1200px;
@@ -99,13 +105,13 @@ body {
 /* Mobile header sizing */
 @media (max-width: 768px) {
     .app-header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 480px) {
     .app-header h1 {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -128,8 +134,8 @@ body {
     border: 2px solid var(--color-ab-hover);
     color: white; /* Ensure text is white against the solid background */
     font-weight: 800; /* Bolder text for visibility */
-    font-size: 1.5rem; /* Make the button slightly more compact than just raw text */
-    padding: 0.8rem 2rem; /* Give it more button-like padding */
+    font-size: 1.25rem; /* Make the button slightly more compact than just raw text */
+    padding: 0.6rem 1.5rem; /* Give it more button-like padding */
     border-radius: 3rem; /* Perfectly rounded pill shape */
     position: relative;
     z-index: 100;
@@ -151,8 +157,8 @@ body {
 }
 
 .back-link svg {
-    width: 28px; /* Slightly larger icon */
-    height: 28px;
+    width: 24px; /* Slightly larger icon */
+    height: 24px;
     stroke-width: 3;
     margin-right: 0.75rem; /* More breathing room */
 }
@@ -165,13 +171,15 @@ body {
 /* Mobile search bar */
 @media (max-width: 768px) {
     .search-container {
-        width: 200px;
+        width: 75%;
+        max-width: 280px;
     }
 }
 
 @media (max-width: 480px) {
     .search-container {
-        width: 150px;
+        width: 80%;
+        max-width: 240px;
     }
 }
 
@@ -381,10 +389,17 @@ body {
         left: unset !important;
         top: unset !important;
         transform: none !important;
-        width: 100% !important;
-        margin: 2rem 0 !important;
+        width: 90% !important;
+        max-width: 350px !important;
+        margin: 1rem auto !important;
         order: 2 !important;
         box-shadow: none !important;
+    }
+    
+    .drugs-dosing-box {
+        width: 90% !important;
+        max-width: 350px !important;
+        margin: 1rem auto !important;
     }
 }
 
@@ -408,6 +423,18 @@ body {
     font-size: 1rem;
     margin-bottom: 0.4rem;
     color: var(--color-e); /* Anticholinergic Green */
+}
+
+/* Ensure newly upgraded h3 tags inside side boxes are appropriately scaled */
+.supplementary-box h3,
+.supplementary-box-left h3 {
+    font-size: 1rem !important;
+    color: var(--color-e);
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.4);
+    padding-bottom: 0.2rem;
+    line-height: 1.2;
 }
 
 .supplementary-box ul,
@@ -497,13 +524,16 @@ body {
 @media (max-width: 768px) {
     .tile-content h2 {
         font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.25rem;
+        text-transform: uppercase;
     }
 }
 
 @media (max-width: 480px) {
     .tile-content h2 {
         font-size: 1.25rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
     }
 }
 
@@ -791,6 +821,30 @@ body {
     transform: translateY(0);
 }
 
+/* Small inline CICO button */
+.cico-btn {
+    background-color: var(--color-c);
+    color: #ffffff !important; /* Force white text */
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    text-decoration: none !important;
+    display: inline-block;
+    font-size: 0.85em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    line-height: 1.2;
+    vertical-align: middle;
+    margin: -0.25rem 0 0 0; /* Increased negative margin to perfectly level with all-caps text */
+}
+
+.cico-btn:hover {
+    background-color: var(--color-c-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    opacity: 1 !important; /* Prevent the generic link hover opacity */
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -826,8 +880,8 @@ body {
 
 .crisis-header {
     text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -862,10 +916,21 @@ body {
     line-height: 1.7;
 }
 
+/* Standardize in-text hyperlinks */
+.crisis-body a:not(.primary-btn) {
+    color: inherit;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+}
+
+.crisis-body a:not(.primary-btn):hover {
+    opacity: 0.8;
+}
+
 /* Mobile crisis content */
 @media (max-width: 768px) {
     .crisis-body {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.5rem;
         font-size: 1rem;
         border-radius: 1rem;
         display: flex;
@@ -878,21 +943,36 @@ body {
         order: 2;
     }
     .crisis-section {
-        padding: 1.25rem 1rem;
+        padding: 1rem 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .crisis-body {
-        padding: 1rem 0.5rem;
+        padding: 0.5rem 0.1rem;
         font-size: 0.95rem;
     }
     .crisis-section {
-        padding: 1rem 0.6rem;
+        padding: 0.5rem 0.2rem;
     }
     .supplementary-box,
     .supplementary-box-left {
-        padding: 0.8rem 0.6rem;
+        padding: 1rem;
+    }
+    
+    /* Un-bunch nested lists to use available space */
+    .crisis-section ul ul {
+        padding-left: 0.6rem;
+    }
+    .crisis-section > ul > li > ol {
+        padding-left: 1.1rem;
+    }
+    .crisis-section > ul > li > ul > li::before {
+        left: -0.6rem;
+    }
+    .crisis-section > ul > li > ul > li > ul > li::before,
+    .crisis-section > ul > li > ol > li > ul > li::before {
+        left: -0.6rem;
     }
 }
 
@@ -915,13 +995,12 @@ body {
 }
 
 .crisis-section h3 {
-    color: var(--text-primary);
-    font-size: 1.3rem;
+    color: var(--color-e);
+    font-size: 1.15rem !important; /* Force uniform size across all headings, slightly smaller */
     margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(239, 68, 68, 0.4);
     padding-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
+    line-height: 1.3;
 }
 
 .crisis-section ul {
@@ -946,10 +1025,7 @@ body {
     background-color: rgba(234, 179, 8, 0.05);
 }
 
-.crisis-section.warning-box h3 {
-    color: var(--color-d);
-    border-bottom-color: rgba(234, 179, 8, 0.2);
-}
+
 
 .crisis-section.warning-box li::before {
     color: var(--color-d);
@@ -960,10 +1036,7 @@ body {
     background-color: rgba(239, 68, 68, 0.05);
 }
 
-.crisis-section.alert-box h3 {
-    color: var(--color-c);
-    border-bottom-color: rgba(239, 68, 68, 0.2);
-}
+
 
 .crisis-section.alert-box li::before {
     color: var(--color-c);
@@ -977,12 +1050,20 @@ body {
 /* Touch-friendly interactions for mobile */
 @media (max-width: 768px) {
     .tile,
-    .crisis-list a,
     .primary-btn {
         min-height: 44px; /* iOS recommended touch target size */
     }
 
+    .crisis-list {
+        opacity: 0.85;
+        font-weight: 500;
+    }
+
+    .crisis-list li {
+        margin-bottom: 0.15rem;
+    }
+
     .crisis-list a {
-        padding: 8px 12px; /* Increase touch area */
+        padding: 4px 8px; /* Reduced touch area to close gaps */
     }
 }
