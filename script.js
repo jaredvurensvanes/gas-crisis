@@ -1570,7 +1570,7 @@ const crisisData = {
                     <li style="font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.2rem; margin-bottom: 0.2rem; margin-top: 0.8rem;">SPECIFIC</li>
                     <li>CEASE OFFENDING AGENT</li>
                     <li>REMOVE STIMULUS</li>
-                    <li>OCTREOTIDE 50-200MCG IV</li>
+                    <li>OCTREOTIDE 100-1000MCG IV (<a href="crisis.html?id=e-carcinoid" style="text-decoration: underline;">CARCINOID CRISIS</a>)</li>
                     <li>DANTROLENE 2.5MG/KG IV, REPEAT TO 10MG/KG</li>
                     <li>CYPROHEPTADINE 12MG PO/NG</li>
                 </ul>
@@ -1599,7 +1599,7 @@ const crisisData = {
                     <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.95rem; color: #f8fafc;">
                         <li style="margin-bottom: 0.4rem;"><span style="color: #d1d5db; font-weight: 700;">CNS</span> (STROKE / HIGH ICP, <a href="crisis.html?id=d-autonomic" style="text-decoration: underline;">AUTONOMIC DYSREFLEXIA</a>, WITHDRAWAL, RECREATIONAL DRUGS)</li>
                         <li style="margin-bottom: 0.4rem;"><span style="color: #d1d5db; font-weight: 700;">RESP</span> (HYPOXIA / HYPERCAPNOEA)</li>
-                        <li style="margin-bottom: 0;"><span style="color: #d1d5db; font-weight: 700;">ENDOCRINE</span> (<a href="crisis.html?id=e-thyroid" style="text-decoration: underline;">THYROID STORM</a>, PHAEOCHROMOCYTOMA, CARCINOID, SEROTONIN SYNDROME, MALIGNANT HYPERTHERMIA, CONN'S / CUSHINGS)</li>
+                        <li style="margin-bottom: 0;"><span style="color: #d1d5db; font-weight: 700;">ENDOCRINE</span> (<a href="crisis.html?id=e-thyroid" style="text-decoration: underline;">THYROID STORM</a>, PHAEOCHROMOCYTOMA, <a href="crisis.html?id=e-carcinoid" style="text-decoration: underline;">CARCINOID</a>, SEROTONIN SYNDROME, MALIGNANT HYPERTHERMIA, CONN'S / CUSHINGS)</li>
                     </ul>
                 </div>
 
@@ -2291,6 +2291,80 @@ const crisisData = {
             </div>
         `
     },
+    'e-carcinoid': {
+        title: 'CARCINOID CRISIS',
+        content: `
+            <div class="supplementary-box">
+                <strong>CLINICAL FEATURES</strong>
+                <ul>
+                    <li>HAEMODYNAMIC INSTABILITY (HYPO/HYPERTENSION)</li>
+                    <li>TACHYCARDIA</li>
+                    <li>FLUSHING</li>
+                    <li>BRONCHOSPASM</li>
+                    <li>HYPERTHERMIA</li>
+                </ul>
+            </div>
+            <div class="supplementary-box-left">
+                <strong>HISTAMINE RELEASING DRUGS</strong>
+                <ul>
+                    <li>MORPHINE / CODEINE</li>
+                    <li>PETHIDINE</li>
+                    <li>ATRACURIUM / MIVACURIUM</li>
+                </ul>
+            </div>
+            <div class="crisis-section alert-box">
+                <h3 style="margin-top: 0; color: var(--color-e);">IMMEDIATE MANAGEMENT</h3>
+                <ul>
+                    <li>ABCDE CHECK</li>
+                    <li>CONSIDER +/- REMOVE PRECIPITANT
+                        <ul>
+                            <li>SURGICAL STIMULUS</li>
+                            <li>INDUCTION + INTUBATION</li>
+                            <li>UNMITIGATED SNS RESPONSE</li>
+                            <li>TUMOUR MANIPULATION / EMBOLISATION / RADIONUCEUTIDE THERAPY</li>
+                            <li>HISTAMINERGIC MEDICATION ADMINISTRATION</li>
+                        </ul>
+                    </li>
+                    <li>INITIATE APPROPRIATE MONITORING (ART LINE, CVP +/- TTE/TOE)</li>
+                </ul>
+                <h3 style="margin-top: 1.5rem; color: var(--color-e);">ANTICIPATE AND MANAGE</h3>
+                <ul>
+                    <li>RIGHT HEART FAILURE (CARCINOID HEART DISEASE)</li>
+                    <li>HAEMODYNAMIC INSTABILITY (HYPER / HYPOTENSION)</li>
+                    <li>HYPOVOLAEMIA
+                        <ul>
+                            <li>CAUTION RV OVERLOAD</li>
+                        </ul>
+                    </li>
+                    <li>ELECTROLYTE DERANGEMENT</li>
+                    <li>HYPERTHERMIA</li>
+                    <li>HYPERGLYCAEMIA</li>
+                    <li>ACIDOSIS</li>
+                    <li>RENAL FAILURE</li>
+                    <li>BRONCHOSPASM
+                        <ul>
+                            <li>CAUTION ADRENERGIC AGENTS</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3 style="margin-top: 1.5rem; color: var(--color-e);">SPECIFIC THERAPIES</h3>
+                <ul>
+                    <li>OCTREOTIDE (MAINSTAY) - 100-1000MCG BOLUSES (INFUSION 100-1000MCG/HOUR)</li>
+                    <li>VASOPRESSOR SELECTION - LIMITED EVIDENCE - PHENYLEPHRINE, VASOPRESSIN PREFERRED - AVOID INDIRECT AGENTS (METARAMINOL / EPHEDRINE)</li>
+                    <li>EXERCISE CAUTION WITH ADRENERGIC AGENTS (NORADRENALINE, ADRENALINE, SALBUTAMOL)</li>
+                    <li>CONSIDER ANTIHISTAMINES (H1 & H2 ANTAGONISTS)</li>
+                    <li>CONSIDER GLUCOCORTICOIDS</li>
+                </ul>
+                <h3 style="margin-top: 1.5rem; color: var(--color-e);">POST CRISIS MANAGEMENT</h3>
+                <ul>
+                    <li>ICU REFERRAL</li>
+                    <li>CONTINUE OCTREOTIDE INFUSION (WEAN OVER DAYS)</li>
+                    <li>PAIN MANAGEMENT (REGIONAL / NEURAXIAL / PCA)</li>
+                </ul>
+            </div>
+        `
+    },
+
 
 
     // O
@@ -2906,9 +2980,11 @@ const crisisData = {
                     <li>Australian and New Zealand Committee on Resuscitation (ANZCOR). ANZCOR Guidelines [Internet]. Melbourne (VIC): ANZCOR; [updated 2024; cited 2026 Mar 12]. Available from: https://www.anzcor.org/</li>
                     <li>Borshoff DC. The anaesthetic crisis manual. International edition, version 2.0. Perth: Leeuwin Press; 2017.</li>
                     <li>Chu J, Johnston TA, Geoghegan J; Royal College of Obstetricians and Gynaecologists. Maternal Collapse in Pregnancy and the Puerperium: Green-top Guideline No. 56. BJOG. 2020;127(5):e14-e52.</li>
-                    <li>Approach to the patient with thyroid storm. J Clin Endocrinol Metab. 2026 Feb 8;111(5):1484-1494. doi: 10.1210/clinem/dgag054.</li>
+                    <li>Kaltsas G, Caplin M, Davies P, et al. ENETS Consensus Guidelines for the Standards of Care in Neuroendocrine Tumors: Pre- and Perioperative Therapy in Patients with Neuroendocrine Tumors. Neuroendocrinology. 2017;105(3):245-254.</li>
                     <li>Karcher C, Jurisevic C, Southwood T, McCormack D, Rogers A, Levine A, et al. The Australasian ANZSCTS/ANZICS guidelines on cardiothoracic advanced life support (CALS-ANZ). Crit Care Resusc. 2022 Sep 5;24(3):218-223.</li>
+                    <li>Kopp PA, Giordani I, Feldt-Rasmussen U, Forget-Renaud A. Approach to the patient with thyroid storm. J Clin Endocrinol Metab. 2026 Feb 8;111(5):1484-1494. doi: 10.1210/clinem/dgag054.</li>
                     <li>Malignant Hyperthermia Australia [Internet]. [cited 2026 May 7]. Available from: https://www.malignanthyperthermia.org.au/</li>
+                    <li>NeuroEndocrine Cancer Australia. Carcinoid crisis and anaesthesia fact sheet [Internet]. NeuroEndocrine Cancer Australia; [cited 2026 May 19]. Available from: https://neuroendocrine.org.au/</li>
                     <li>Royal Australian and New Zealand College of Obstetricians and Gynaecologists (RANZCOG). Guideline for the management of hypertensive disorders of pregnancy [Internet]. Melbourne: RANZCOG; 2023 [cited 2024 May 21]. Available from: ranzcog.edu.au</li>
                     <li>Royal Australian and New Zealand College of Obstetricians and Gynaecologists (RANZCOG). Management of postpartum haemorrhage (C-Obs 43) [Internet]. Melbourne: RANZCOG; 2017 [cited 2026 May 5]. Available from: https://ranzcog.edu.au/wp-content/uploads/2022/05/Management-of-Postpartum-Haemorrhage-C-Obs-43.pdf</li>
                     <li>Sabato SC, Long E. An institutional approach to the management of the 'Can't Intubate, Can't Oxygenate' emergency in children. Pediatr Anesth. 2016;26(8):784-793.</li>
