@@ -1,4 +1,4 @@
-﻿function getClinicalParams(inputWeight) {
+function getClinicalParams(inputWeight) {
     const weights = Object.keys(CLINICAL_DATA).map(Number);
     // Find weight closest to input
     const closestWeight = weights.reduce((prev, curr) =>
@@ -3198,7 +3198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     let displayAge = !isNaN(a) && a > 0 ? a + ' yrs' : data.ageLabel;
                     const trA = document.createElement('tr');
-                    trA.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Age</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
+                    trA.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Typical Age</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
                     tableBody.appendChild(trA);
 
                     for (const [key, label] of Object.entries(labels)) {
