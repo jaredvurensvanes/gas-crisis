@@ -2364,6 +2364,49 @@ const crisisData = {
             </div>
         `
     },
+    'e-turp': {
+        title: 'TURP SYNDROME / HYSTEROSCOPY INDUCED HYPONATRAEMIA',
+        content: `
+            <div class="supplementary-box">
+                <strong>SEVERE NEUROLOGICAL FEATURES</strong>
+                <ul>
+                    <li>VISUAL DISTURBANCE / BLINDNESS</li>
+                    <li>NAUSEA AND VOMITING</li>
+                    <li>SEVERE HEADACHES</li>
+                    <li>PRONOUNCED HYPOTENSION</li>
+                </ul>
+            </div>
+            <div class="crisis-section alert-box">
+                <h3 style="margin-top: 0; color: var(--color-e);">IMMEDIATE MANAGEMENT</h3>
+                <ul>
+                    <li>100% O2</li>
+                    <li>ABCDE CHECK</li>    
+                    <li>CEASE IRRIGATION FLUDIS (NON-CONDUCTIVE EG. GYLCINE)<li/> 
+                    <li>CEASE INTRAVENOUS FLUIDS / AVOID HYPOTONIC IVF</li> 
+                    <li>CONSIDER INTUBATION (ALTERED CONSCIOUS STATE / UNPROTECTED AIRWAY)</li>
+                    <li>SEND IX's - [Na+], SERUM OSMOLALITY, Hb, HCT</li>
+                </ul>
+                <h3 style="margin-top: 1.5rem; color: var(--color-e);">ANTICIPATE AND MANAGE</h3>
+                <ul>
+                    <li>CVS INSTABILTY / DYSRHYTHMIA - INTOTROPES / VASOPRESSORS</li>
+                    <li>SEIZURES - BENZODIAZEPINES +/- MAGNESIUM SULFATE</li>
+                    <li>PULMONARY OEDEMA - (OSMOTIC THERAPY - BELOW)</li>
+                </ul>
+                <h3 style="margin-top: 1.5rem; color: var(--color-e);">SPECIFIC THERAPIES</h3>
+                <ul>
+                    <li>HYPERTONIC SALINE (3%) - IF [Na] <120 OR SEVERE NEUROLOGICAL SXs (INCREASE MAX 1 MMOL/L/HR)</li>
+                    <li>OSMOTIC THERAPY (PULMONARY OEDEMA ONLY)
+                        <ul>
+                            <li>FUROSEMIDE (REMOVES FREE H2O / WORSENS HYPONATRAEMIA)</li>
+                            <li>MANNITOL (LESS SODIUM LOSS Cf. FUROSEMIDE)</li>
+                        </ul>
+                    </li>
+                    <li>ART LINE +/- CVC</li>
+                    <li>ICU / HDU REFERRAL</li>
+                </ul>
+            </div>
+        `
+    },
 
 
 
@@ -2972,7 +3015,7 @@ const crisisData = {
         title: 'CREDITED RESOURCES',
         content: `
             <div class="crisis-section">
-                <ol style="list-style-type: none; padding-left: 0;">
+                <ol style="list-style-type: none; padding-left: 0; overflow-wrap: anywhere; word-break: break-word;">
                     <li>Ambulance Victoria. Clinical Practice Guidelines [Internet]. Melbourne: Ambulance Victoria; [cited 2026]. Available from: https://www.ambulance.vic.gov.au/paramedics/clinical-practice-guidelines/</li>
                     <li>American Society of Anesthesiologists Task Force on Operating Room Fires. Practice advisory for the prevention and management of operating room fires: an updated report. Anesthesiology. 2013;118(2):271-290.</li>
                     <li>Anaesthetic Crisis Handbook [Internet]. New Zealand; [cited 2026 Apr 16]. Available from: https://anaestheticcrisishandbook.com/</li>
@@ -2985,6 +3028,7 @@ const crisisData = {
                     <li>Kopp PA, Giordani I, Feldt-Rasmussen U, Forget-Renaud A. Approach to the patient with thyroid storm. J Clin Endocrinol Metab. 2026 Feb 8;111(5):1484-1494. doi: 10.1210/clinem/dgag054.</li>
                     <li>Malignant Hyperthermia Australia [Internet]. [cited 2026 May 7]. Available from: https://www.malignanthyperthermia.org.au/</li>
                     <li>NeuroEndocrine Cancer Australia. Carcinoid crisis and anaesthesia fact sheet [Internet]. NeuroEndocrine Cancer Australia; [cited 2026 May 19]. Available from: https://neuroendocrine.org.au/</li>
+                    <li>O'Donnell AM, Foo IT. Anaesthesia for transurethral resection of the prostate. BJA Education. 2009;9(3):92-96. Available from: https://www.bjaed.org/article/S1743-1816(17)30313-X/fulltext</li>
                     <li>Royal Australian and New Zealand College of Obstetricians and Gynaecologists (RANZCOG). Guideline for the management of hypertensive disorders of pregnancy [Internet]. Melbourne: RANZCOG; 2023 [cited 2024 May 21]. Available from: ranzcog.edu.au</li>
                     <li>Royal Australian and New Zealand College of Obstetricians and Gynaecologists (RANZCOG). Management of postpartum haemorrhage (C-Obs 43) [Internet]. Melbourne: RANZCOG; 2017 [cited 2026 May 5]. Available from: https://ranzcog.edu.au/wp-content/uploads/2022/05/Management-of-Postpartum-Haemorrhage-C-Obs-43.pdf</li>
                     <li>Sabato SC, Long E. An institutional approach to the management of the 'Can't Intubate, Can't Oxygenate' emergency in children. Pediatr Anesth. 2016;26(8):784-793.</li>
@@ -3099,7 +3143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tableBody = document.getElementById('params-table-body');
 
                 const labels = {
-                    ageLabel: 'Typical Age', rr: 'Respiratory Rate', hr: 'Heart Rate',
+                    vt: 'V<small>T</small> 6-8ml/kg (ml)', rr: 'Respiratory Rate', hr: 'Heart Rate',
                     sbp: 'Systolic BP',
                     ettCuffed: 'ETT Cuffed (Age/4 + 3.5)',
                     ettUncuffed: 'ETT Uncuffed (Age/4 + 4)',
@@ -3147,10 +3191,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const data = getClinicalParams(w);
                     tableBody.innerHTML = '';
+                    
+                    const trW = document.createElement('tr');
+                    trW.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Weight</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${parseFloat(w).toFixed(1)} kg</td>`;
+                    tableBody.appendChild(trW);
+
+                    let displayAge = !isNaN(a) && a > 0 ? a + ' yrs' : data.ageLabel;
+                    const trA = document.createElement('tr');
+                    trA.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Age</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
+                    tableBody.appendChild(trA);
+
                     for (const [key, label] of Object.entries(labels)) {
                         const tr = document.createElement('tr');
                         let value = data[key];
                         if (key === 'atropine') value = Math.min(Math.round(value * 1000), 600);
+                        if (key === 'vt') value = Math.round(w * 6) + ' – ' + Math.round(w * 8);
                         tr.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600;">${label}</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #f8fafc;">${value}</td>`;
                         tableBody.appendChild(tr);
                     }
