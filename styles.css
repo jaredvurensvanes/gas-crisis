@@ -964,6 +964,10 @@ body {
     .crisis-section ul ul {
         padding-left: 0.6rem;
     }
+    .crisis-section ul ul ul,
+    .crisis-section ol ul {
+        padding-left: 1.1rem;
+    }
     .crisis-section > ul > li > ol {
         padding-left: 1.1rem;
     }
@@ -972,7 +976,7 @@ body {
     }
     .crisis-section > ul > li > ul > li > ul > li::before,
     .crisis-section > ul > li > ol > li > ul > li::before {
-        left: -0.6rem;
+        left: -0.9rem;
     }
 }
 
