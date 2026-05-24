@@ -1,4 +1,4 @@
-﻿function getClinicalParams(inputWeight) {
+function getClinicalParams(inputWeight) {
     const weights = Object.keys(CLINICAL_DATA).map(Number);
     // Find weight closest to input
     const closestWeight = weights.reduce((prev, curr) =>
@@ -3158,33 +3158,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 const ageInput = document.getElementById('age-input');
                 const resultDiv = document.getElementById('params-result');
                 const vitalsLabels = {
-                    hr: 'Heart Rate',
-                    rr: 'Respiratory Rate',
-                    sbp: 'Systolic BP'
+                    hr: { label: 'Heart Rate', unit: 'bpm' },
+                    rr: { label: 'Respiratory Rate', unit: 'bpm' },
+                    sbp: { label: 'Systolic BP', unit: 'sys' }
                 };
 
                 const airwayLabels = {
-                    ettCuffed: 'ETT Cuffed (Age/4 + 3.5)',
-                    ettUncuffed: 'ETT Uncuffed (Age/4 + 4)',
-                    depthOral: 'ETT Depth Oral - Age/2 + 12 (cm)',
-                    depthNasal: 'ETT Depth Nasal - Age/2 + 15 (cm)',
-                    lma: 'LMA Size',
-                    lScope: 'Laryngoscope',
-                    suction: 'Suction Catheter - ETT size x2 (Fr)',
-                    vt: 'V<small>T</small> 6-8ml/kg (ml)'
+                    ettCuffed: { label: 'ETT Cuffed (Age/4 + 3.5)', unit: '' },
+                    ettUncuffed: { label: 'ETT Uncuffed (Age/4 + 4)', unit: '' },
+                    depthOral: { label: 'ETT Depth Oral - Age/2 + 12', unit: 'cm' },
+                    depthNasal: { label: 'ETT Depth Nasal - Age/2 + 15', unit: 'cm' },
+                    lma: { label: 'LMA Size', unit: '' },
+                    lScope: { label: 'Laryngoscope', unit: '' },
+                    suction: { label: 'Suction Catheter - ETT size x2', unit: 'Fr' },
+                    vt: { label: 'V<small>T</small> 6-8ml/kg', unit: 'ml' }
                 };
 
                 const drugsLabels = {
-                    atropine: 'Atropine 20mcg/kg (mcg)',
-                    suxIm: 'Sux IM 4mg/kg (mg)',
-                    suxIv: 'Sux IV 2mg/kg (mg)',
-                    anaphModIm: 'Anaphylaxis Moderate IM 10mcg/kg (mcg)',
-                    anaphModIv: 'Anaphylaxis Moderate IV 2mcg/kg (mcg)',
-                    anaphLife: 'Anaphylaxis Life-threatening IV (mcg)',
-                    adrArrest: 'Adrenaline Arrest 10mcg/kg (mcg)',
-                    adrArrestMl: 'Adrenaline Arrest 1:10,000 (ml)',
-                    seizure: 'Midazolam 0.15mg/kg (mg)',
-                    dccs: 'DC Cardioversion 4J/kg (J)'
+                    atropine: { label: 'Atropine 20mcg/kg', unit: 'mcg' },
+                    suxIm: { label: 'Sux IM 4mg/kg', unit: 'mg' },
+                    suxIv: { label: 'Sux IV 2mg/kg', unit: 'mg' },
+                    adrArrest: { label: 'Adrenaline - Arrest - 10mcg/kg', unit: 'mcg' },
+                    adrArrestMl: { label: 'Adrenaline - Arrest - 1:10,000', unit: 'ml' },
+                    anaphModIm: { label: 'Adrenaline - Anaphylaxis - Moderate IM 10mcg/kg', unit: 'mcg' },
+                    anaphModIv: { label: 'Adrenaline - Anaphylaxis - Moderate IV 2mcg/kg', unit: 'mcg' },
+                    anaphLife: { label: 'Adrenaline - Anaphylaxis - Life-threatening IV 4-10mcg/kg', unit: 'mcg' },
+                    seizure: { label: 'Midazolam - Seizure - 0.15mg/kg', unit: 'mg' },
+                    dccs: { label: 'DC Cardioversion 4J/kg', unit: 'J' }
                 };
 
                 function runCalc() {
@@ -3230,38 +3230,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Add Weight row to Vitals
                     const trW = document.createElement('tr');
-                    trW.innerHTML = `<td>Weight</td><td style="color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${parseFloat(w).toFixed(1)} kg</td>`;
+                    trW.innerHTML = `<td>Weight</td><td style="color: #f8fafc; font-weight: bold; font-size: 1.1em;">${parseFloat(w).toFixed(1)} kg</td>`;
                     vitalsBody.appendChild(trW);
 
                     // Add Typical Age row to Vitals
                     let displayAge = !isNaN(a) && a > 0 ? a + ' yrs' : data.ageLabel;
                     const trA = document.createElement('tr');
-                    trA.innerHTML = `<td>Typical Age</td><td style="color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
+                    trA.innerHTML = `<td>Typical Age</td><td style="color: #f8fafc; font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
                     vitalsBody.appendChild(trA);
 
                     // Populate Vitals
-                    for (const [key, label] of Object.entries(vitalsLabels)) {
+                    for (const [key, item] of Object.entries(vitalsLabels)) {
                         const tr = document.createElement('tr');
                         let value = data[key];
-                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        const unitStr = item.unit ? ' ' + item.unit : '';
+                        tr.innerHTML = `<td>${item.label}</td><td>${value}${unitStr}</td>`;
                         vitalsBody.appendChild(tr);
                     }
 
                     // Populate Airway
-                    for (const [key, label] of Object.entries(airwayLabels)) {
+                    for (const [key, item] of Object.entries(airwayLabels)) {
                         const tr = document.createElement('tr');
                         let value = data[key];
                         if (key === 'vt') value = Math.round(w * 6) + ' – ' + Math.round(w * 8);
-                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        const unitStr = item.unit ? ' ' + item.unit : '';
+                        tr.innerHTML = `<td>${item.label}</td><td>${value}${unitStr}</td>`;
                         airwayBody.appendChild(tr);
                     }
 
                     // Populate Drugs
-                    for (const [key, label] of Object.entries(drugsLabels)) {
+                    for (const [key, item] of Object.entries(drugsLabels)) {
                         const tr = document.createElement('tr');
                         let value = data[key];
                         if (key === 'atropine') value = Math.min(Math.round(value * 1000), 600);
-                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        const unitStr = item.unit ? ' ' + item.unit : '';
+                        tr.innerHTML = `<td>${item.label}</td><td>${value}${unitStr}</td>`;
                         drugsBody.appendChild(tr);
                     }
 
