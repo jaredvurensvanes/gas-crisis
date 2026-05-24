@@ -1,4 +1,4 @@
-function getClinicalParams(inputWeight) {
+﻿function getClinicalParams(inputWeight) {
     const weights = Object.keys(CLINICAL_DATA).map(Number);
     // Find weight closest to input
     const closestWeight = weights.reduce((prev, curr) =>
@@ -2394,7 +2394,7 @@ const crisisData = {
                 </ul>
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">SPECIFIC THERAPIES</h3>
                 <ul>
-                    <li>HYPERTONIC SALINE (3%) - IF [Na] <120 OR SEVERE NEUROLOGICAL SXs (INCREASE MAX 1 MMOL/L/HR)</li>
+                    <li>HYPERTONIC SALINE (3%) - IF [Na] <120 OR SEVERE NEUROLOGICAL FEATURES (INCREASE MAX 1 MMOL/L/HR)</li>
                     <li>OSMOTIC THERAPY (PULMONARY OEDEMA ONLY)
                         <ul>
                             <li>FUROSEMIDE (REMOVES FREE H2O / WORSENS HYPONATRAEMIA)</li>
@@ -3004,9 +3004,26 @@ const crisisData = {
                     </div>
                 </div>
                 <div id="params-result" style="display:none;">
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
-                        <tbody id="params-table-body"></tbody>
-                    </table>
+                    <div class="paeds-calc-grid">
+                        <div class="paeds-card">
+                            <h3>Vitals</h3>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tbody id="vitals-table-body"></tbody>
+                            </table>
+                        </div>
+                        <div class="paeds-card">
+                            <h3>Airway</h3>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tbody id="airway-table-body"></tbody>
+                            </table>
+                        </div>
+                        <div class="paeds-card">
+                            <h3>Drug Doses</h3>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tbody id="drugs-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         `
@@ -3140,22 +3157,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 const weightInput = document.getElementById('weight-input');
                 const ageInput = document.getElementById('age-input');
                 const resultDiv = document.getElementById('params-result');
-                const tableBody = document.getElementById('params-table-body');
+                const vitalsLabels = {
+                    hr: 'Heart Rate',
+                    rr: 'Respiratory Rate',
+                    sbp: 'Systolic BP'
+                };
 
-                const labels = {
-                    vt: 'V<small>T</small> 6-8ml/kg (ml)', rr: 'Respiratory Rate', hr: 'Heart Rate',
-                    sbp: 'Systolic BP',
+                const airwayLabels = {
                     ettCuffed: 'ETT Cuffed (Age/4 + 3.5)',
                     ettUncuffed: 'ETT Uncuffed (Age/4 + 4)',
-                    depthOral: 'ETT Depth Oral - Age/2 + 12 (cm)', depthNasal: 'ETT Depth Nasal - Age/2 + 15 (cm)',
-                    suction: 'Suction Catheter - ETT size x2 (Fr)', lma: 'LMA Size', lScope: 'Laryngoscope',
-                    atropine: 'Atropine 20mcg/kg (mcg)', suxIm: 'Sux IM 4mg/kg (mg)', suxIv: 'Sux IV 2mg/kg (mg)',
+                    depthOral: 'ETT Depth Oral - Age/2 + 12 (cm)',
+                    depthNasal: 'ETT Depth Nasal - Age/2 + 15 (cm)',
+                    lma: 'LMA Size',
+                    lScope: 'Laryngoscope',
+                    suction: 'Suction Catheter - ETT size x2 (Fr)',
+                    vt: 'V<small>T</small> 6-8ml/kg (ml)'
+                };
+
+                const drugsLabels = {
+                    atropine: 'Atropine 20mcg/kg (mcg)',
+                    suxIm: 'Sux IM 4mg/kg (mg)',
+                    suxIv: 'Sux IV 2mg/kg (mg)',
                     anaphModIm: 'Anaphylaxis Moderate IM 10mcg/kg (mcg)',
                     anaphModIv: 'Anaphylaxis Moderate IV 2mcg/kg (mcg)',
                     anaphLife: 'Anaphylaxis Life-threatening IV (mcg)',
                     adrArrest: 'Adrenaline Arrest 10mcg/kg (mcg)',
                     adrArrestMl: 'Adrenaline Arrest 1:10,000 (ml)',
-                    dccs: 'DC Cardioversion 4J/kg (J)', seizure: 'Midazolam 0.15mg/kg (mg)'
+                    seizure: 'Midazolam 0.15mg/kg (mg)',
+                    dccs: 'DC Cardioversion 4J/kg (J)'
                 };
 
                 function runCalc() {
@@ -3190,25 +3219,52 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const data = getClinicalParams(w);
-                    tableBody.innerHTML = '';
                     
-                    const trW = document.createElement('tr');
-                    trW.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Weight</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${parseFloat(w).toFixed(1)} kg</td>`;
-                    tableBody.appendChild(trW);
+                    const vitalsBody = document.getElementById('vitals-table-body');
+                    const airwayBody = document.getElementById('airway-table-body');
+                    const drugsBody = document.getElementById('drugs-table-body');
 
+                    vitalsBody.innerHTML = '';
+                    airwayBody.innerHTML = '';
+                    drugsBody.innerHTML = '';
+                    
+                    // Add Weight row to Vitals
+                    const trW = document.createElement('tr');
+                    trW.innerHTML = `<td>Weight</td><td style="color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${parseFloat(w).toFixed(1)} kg</td>`;
+                    vitalsBody.appendChild(trW);
+
+                    // Add Typical Age row to Vitals
                     let displayAge = !isNaN(a) && a > 0 ? a + ' yrs' : data.ageLabel;
                     const trA = document.createElement('tr');
-                    trA.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600; font-size: 1.1em;">Typical Age</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
-                    tableBody.appendChild(trA);
+                    trA.innerHTML = `<td>Typical Age</td><td style="color: rgb(56, 189, 248); font-weight: bold; font-size: 1.1em;">${displayAge}</td>`;
+                    vitalsBody.appendChild(trA);
 
-                    for (const [key, label] of Object.entries(labels)) {
+                    // Populate Vitals
+                    for (const [key, label] of Object.entries(vitalsLabels)) {
+                        const tr = document.createElement('tr');
+                        let value = data[key];
+                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        vitalsBody.appendChild(tr);
+                    }
+
+                    // Populate Airway
+                    for (const [key, label] of Object.entries(airwayLabels)) {
+                        const tr = document.createElement('tr');
+                        let value = data[key];
+                        if (key === 'vt') value = Math.round(w * 6) + ' – ' + Math.round(w * 8);
+                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        airwayBody.appendChild(tr);
+                    }
+
+                    // Populate Drugs
+                    for (const [key, label] of Object.entries(drugsLabels)) {
                         const tr = document.createElement('tr');
                         let value = data[key];
                         if (key === 'atropine') value = Math.min(Math.round(value * 1000), 600);
-                        if (key === 'vt') value = Math.round(w * 6) + ' – ' + Math.round(w * 8);
-                        tr.innerHTML = `<td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-weight: 600;">${label}</td><td style="padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); color: #f8fafc;">${value}</td>`;
-                        tableBody.appendChild(tr);
+                        tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+                        drugsBody.appendChild(tr);
                     }
+
                     resultDiv.style.display = 'block';
                 }
 
