@@ -401,21 +401,6 @@ const crisisData = {
         title: 'HIGH END TIDAL CO2',
         content: `
             <style>
-                .co2-high-actions > ul > li {
-                    margin-bottom: 0.6rem !important;
-                    font-size: 1.05rem;
-                }
-                .co2-high-branch {
-                    padding: 1rem;
-                    border-radius: 0.5rem;
-                    margin-top: 0.5rem;
-                    margin-bottom: 1rem;
-                    background-color: rgba(56, 189, 248, 0.12);
-                    border: 1px solid rgba(56, 189, 248, 0.3);
-                }
-                .co2-high-branch ul {
-                    margin-top: 0.5rem;
-                }
                 .co2-high-actions,
                 .co2-high-actions ul,
                 .co2-high-actions ul li,
@@ -424,9 +409,6 @@ const crisisData = {
                 .co2-high-actions strong,
                 .co2-high-actions a {
                     color: #f8fafc;
-                }
-                .co2-high-branch ul li {
-                    margin-bottom: 0.4rem !important;
                 }
                 .alce-grid {
                     display: grid;
@@ -445,29 +427,9 @@ const crisisData = {
                 <h3>IMMEDIATE ACTIONS</h3>
                 <ul>
                     <li>ABCDE CHECK</li>
-                    <li style="list-style-type: none; margin-left: 0; padding-left: 0; margin-top: 0.8rem;">
-                        <div class="co2-high-branch">
-                            <div style="font-weight: 900; color: rgb(56, 189, 248); font-size: 1.1rem;">ASSESS ETCO2 WAVEFORM</div>
-                            <ul>
-                                <li>RISING BASELINE - CHECK FOR REBREATHING (EXHAUSTED SODA LIME / INADEQUATE FGF)</li>
-                                <li>RISING PHASE III - ?HYPOVENTILATION</li>
-                            </ul>
-                        </div>
-
-                        <div class="co2-high-branch">
-                            <div style="font-weight: 900; color: rgb(56, 189, 248); font-size: 1.1rem;">EXCLUDE COMMON CAUSES</div>
-                            <ul>
-                                <li>LOW MV</li>
-                                <li>EXHAUSTED SODA LIME</li>
-                                <li>INADEQUATE FGF</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li style="list-style-type: none; margin-left: 0; padding-left: 0;">
-                        <div style="margin-top: 1.5rem; margin-left: 0; padding-left: 0;">
-                            <h3>CONSIDER CAUSES AS PER DIAGNOSTIC CHECKLIST</h3>
-                        </div>
-                    </li>
+                    <li>ASSESS ETCO2 WAVEFORM - RISING BASELINE: CHECK FOR REBREATHING (EXHAUSTED SODA LIME / INADEQUATE FGF) OR RISING PHASE III: ?HYPOVENTILATION</li>
+                    <li>EXCLUDE COMMON CAUSES - LOW MV, EXHAUSTED SODA LIME, INADEQUATE FGF</li>
+                    <li>CONSIDER CAUSES AS PER DIAGNOSTIC CHECKLIST</li>
                 </ul>
 
                 <strong style="margin-top: 1.5rem; font-size: 1.1rem; display: block; margin-bottom: 0.5rem; color: var(--text-primary); border-bottom: none; padding-bottom: 0.5rem;">DIAGNOSTIC CHECKLIST</strong>
@@ -579,7 +541,7 @@ const crisisData = {
                 <h3>IMMEDIATE ACTIONS</h3>
                 <ul>
                     <li>&uarr; FiO2/FGF + ABCDE CHECK</li>
-                    <li>CONFIRM READING - CHECK PROBE, PT COLOUR + PERIPHERAL TEMP</li>
+                    <li>CONFIRM READING - CHECK PROBE POSITION, PT COLOUR + PERIPHERAL TEMP</li>
                     <li>IF ABLE POSITION PATIENT HEAD UP / REVERSE TRENDELENBURG</li>
                     <li>SWITCH TO BAG - ASSESS COMPLIANCE + CHEST EXPANSION</li>
                     <li style="margin-top: 1.5rem; list-style-type: none; margin-left: 0; padding-left: 0;">
@@ -776,7 +738,7 @@ const crisisData = {
                     <li style="margin: 1rem 0 1rem 0;"><h3>NO CAUSE IDENTIFIED - CALL FOR HELP</h3></li>
                     <li>SWITCH TO BVM WITH NEW FILTER (TIVA SWITCH IF REQUIRED)</li>
                     <li>CONSIDER REPLACING ETT / LMA</li>
-                    <li>WORK THROUGH TO DIAGNOSTIC CHECKLIST</li>
+                    <li>WORK THROUGH DIAGNOSTIC CHECKLIST</li>
                 </ul>
 
                 <strong style="margin-top: 1.5rem; font-size: 1.1rem; display: block; margin-bottom: 0.5rem; color: var(--text-primary); border-bottom: none; padding-bottom: 0.5rem;">DIAGNOSTIC CHECKLIST</strong>
@@ -3160,7 +3122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const vitalsLabels = {
                     hr: { label: 'Heart Rate', unit: 'bpm' },
                     rr: { label: 'Respiratory Rate', unit: 'bpm' },
-                    sbp: { label: 'Systolic BP', unit: 'sys' }
+                    sbp: { label: 'Systolic BP', unit: 'mmHg' }
                 };
 
                 const airwayLabels = {
