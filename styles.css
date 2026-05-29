@@ -709,6 +709,9 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2rem 1rem;
 }
 
 .modal.show {
@@ -726,6 +729,7 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     transform: translateY(20px);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: auto;
 }
 
 .modal.show .modal-content {
@@ -819,6 +823,36 @@ body {
 
 .primary-btn:active {
     transform: translateY(0);
+}
+
+/* Disclaimer Modal Mobile Overrides */
+@media (max-width: 480px) {
+    .modal {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .modal-content.disclaimer-content {
+        padding: 1.75rem 1.25rem;
+        border-radius: 1rem;
+    }
+    
+    #disclaimer-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    #disclaimer-body p {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+    }
+    
+    .primary-btn {
+        margin-top: 1.5rem;
+        padding: 0.85rem 1.75rem;
+        font-size: 1.1rem;
+    }
 }
 
 /* Small inline CICO button */
@@ -1001,10 +1035,15 @@ body {
 .crisis-section h3 {
     color: var(--color-e);
     font-size: 1.15rem !important; /* Force uniform size across all headings, slightly smaller */
-    margin-bottom: 1rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1.2rem;
     border-bottom: 2px solid rgba(239, 68, 68, 0.4);
     padding-bottom: 0.5rem;
     line-height: 1.3;
+}
+
+.crisis-section h3:first-of-type {
+    margin-top: 0;
 }
 
 .crisis-section ul {

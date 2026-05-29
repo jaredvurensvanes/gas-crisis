@@ -1415,7 +1415,7 @@ const crisisData = {
                                 <ul style="margin: 0.25rem 0 0; padding-left: 1rem; line-height: 1.35;">
                                     <li>TARGETS: FIB>1.5-2, INR<1.5, PLT>50 (TBI/ECMO >100), APTT/PT<1.5</li>
                                     <li>1:1:1 RATIO</li>
-                                    <li>CONSIDER VISCOELASTIC HAEMOSTATIC ASSAYS (TEG/ROTEM)</li>
+                                    <li>CONSIDER VISCOELASTIC HAEMOSTATIC ASSAYS (<a href="crisis.html?id=r-teg">TEG</a>/<a href="crisis.html?id=r-rotem">ROTEM</a>)</li>
                                     <li>CONSIDER CRYOPRECIPITATE, FIBRINOGEN CONCENTRATE, PROTROMBIN COMPLEX CONCENTRATE</li>
                                     <li>CONSIDER HAEMATOLOGY GUIDANCE</li>
                                 </ul>
@@ -2479,7 +2479,7 @@ const crisisData = {
                                     <li style="font-size: 0.85rem; opacity: 0.8; list-style-type: disc;">ANTICIPATE RHF</li>
                                 </ul>
                             </li>
-                            <li style="margin-bottom: 0.4rem;">CARDIAC - ISCHAEMIA, DISSECTION, DYSRHYTHMIA, VALVE</li>
+                            <li style="margin-bottom: 0.4rem;">CARDIAC - ISCHAEMIA, DISSECTION, DYSRHYTHMIA, VALVULAR DISEASE</li>
                             <li style="margin-bottom: 0.4rem;">CEREBRAL EVENT / ICH</li>
                             <li style="margin-bottom: 0;"><a href="crisis.html?id=c-anaphylaxis" style="text-decoration: underline;">ANAPHYLAXIS</a></li>
                         </ul>
@@ -2987,6 +2987,323 @@ const crisisData = {
                         </div>
                     </div>
                 </div>
+            </div>
+        `
+    },
+    'r-vha': {
+        title: 'VHA ALGORITHMS',
+        content: `
+            <div class="crisis-section">
+                <h3>TEG</h3>
+                <ul>
+                    <li><a href="crisis.html?id=r-teg">GO TO TEG ALGORITHM</a></li>
+                </ul>
+                <h3 style="margin-top: 1.5rem;">ROTEM</h3>
+                <ul>
+                    <li><a href="crisis.html?id=r-rotem">GO TO ROTEM ALGORITHM</a></li>
+                </ul>
+            </div>
+        `
+    },
+    'r-teg': {
+        title: 'TEG ALGORITHM <br><a href="crisis.html?id=r-rotem" class="primary-btn" style="font-size: 0.45em; line-height: 1; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO ROTEM</a>',
+        content: `
+            <div class="crisis-section">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">OBSTETRIC / TRAUMA</div>
+
+                <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
+                <ul>
+                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 1G IV</strong></li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (EARLY DIAGNOSIS)</h3>
+                <ul>
+                    <li>CRT A10 &lt; 47MM (OR FLAT LINE CRT AT 5MIN)
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYIS &rarr; <strong>TXA 1G IV</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>FIBRINOGEN</h3>
+                <ul>
+                    <li>IS CFF A10 &lt; 15MM?
+                        <ul>
+                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS FIB CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>PLATELETS</h3>
+                <ul>
+                    <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM
+                        <ul>
+                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
+                                <ul>
+                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>COAGULATION FACTORS</h3>
+                <ul>
+                    <li>NORMAL CFF A10 &ge; 15MM AND CKH-R &gt; 10 MINUTES
+                        <ul>
+                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
+                <ul>
+                    <li>IS CRT (LY30) &gt; 2.2%?
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>STILL BLEEDING?</h3>
+                <ul>
+                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
+                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
+                        <ul>
+                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
+                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="crisis-section" style="margin-top: 2rem;">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CPB / AORTIC DISSECTION</div>
+
+                <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
+                <ul>
+                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                </ul>
+
+                <h3>HEPARIN EFFECT PRESENT?</h3>
+                <ul>
+                    <li>CXR / CKH-R RATIO OR DIFFERENCE PRESENT
+                        <ul>
+                            <li>YES &rarr; HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
+                        </ul>
+                    </li>
+                    <li>CKR AND CKH-R REMAINS @ 10/60
+                        <ul>
+                            <li>PROLONGATION REMAINS &rarr; POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
+                            <li>PROLONGATION REMAINS &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>FIBRINOGEN</h3>
+                <ul>
+                    <li>IS CFF A10 &lt; 15MM?
+                        <ul>
+                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS CRYO OR FIBCONC.</strong> (IF CFF A10 &lt; 10, ENSURE PLATELETS ARE ALSO AVAILABLE)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>PLATELETS</h3>
+                <ul>
+                    <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM
+                        <ul>
+                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
+                                <ul>
+                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE OR PLATELET MAPPING ADP MA &lt; 46</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>COAGULATION FACTORS</h3>
+                <ul>
+                    <li>NORMAL CFF A10 &ge; 15MM AND CKH-R &gt; 10 MINUTES
+                        <ul>
+                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
+                <ul>
+                    <li>IS CRT (LY30) &gt; 2.2%?
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>STILL BLEEDING?</h3>
+                <ul>
+                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
+                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
+                        <ul>
+                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
+                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        `
+    },
+    'r-rotem': {
+        title: 'ROTEM ALGORITHM <br><a href="crisis.html?id=r-teg" class="primary-btn" style="font-size: 0.45em; line-height: 1; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO TEG</a>',
+        content: `
+            <div class="crisis-section">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">OBSTETRIC / TRAUMA</div>
+
+                <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
+                <ul>
+                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 1G IV</strong></li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (EARLY DIAGNOSIS)</h3>
+                <ul>
+                    <li>EXTEM A5 &lt; 35MM (OR FLAT LINE FIBTEM AT 5MIN)
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYIS &rarr; <strong>TXA 1G IV</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>FIBRINOGEN</h3>
+                <ul>
+                    <li>IS FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
+                        <ul>
+                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS FIB CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>PLATELETS</h3>
+                <ul>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM?
+                        <ul>
+                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
+                                <ul>
+                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>COAGULATION FACTORS</h3>
+                <ul>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM CT &gt; 85SEC
+                        <ul>
+                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
+                <ul>
+                    <li>IS FIBTEM ML &ge; 10%?
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>STILL BLEEDING?</h3>
+                <ul>
+                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
+                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
+                        <ul>
+                            <li>MAKE A STRONGER CLOT? GIVE CRYO TO FIBTEM A5 &gt; 14MM, GIVE PLATELETS TO EXTEM A5 &gt; 40MM OR CONSIDER PLATELET FUNCTION TESTING, CONSIDER ELP TO EXTEM CT &lt; 80 SEC</li>
+                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
+                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="crisis-section" style="margin-top: 2rem;">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CPB / AORTIC DISSECTION</div>
+
+                <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
+                <ul>
+                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                </ul>
+
+                <h3>HEPARIN EFFECT PRESENT?</h3>
+                <ul>
+                    <li>INTEM CT / HEPTEM CT RATIO &gt; 1.25
+                        <ul>
+                            <li>YES &rarr; HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
+                        </ul>
+                    </li>
+                    <li>INTEM & HEPTEM CT BOTH &gt; 205 SEC?
+                        <ul>
+                            <li>PROLONGATION REMAINS &rarr; POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
+                            <li>PROLONGATION REMAINS &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>FIBRINOGEN</h3>
+                <ul>
+                    <li>IS FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
+                        <ul>
+                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS CRYO OR FIBCONC.</strong> (IF FIBTEM A5 &lt; 6, ENSURE PLATELETS ARE ALSO AVAILABLE)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>PLATELETS</h3>
+                <ul>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM?
+                        <ul>
+                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
+                                <ul>
+                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE OR PLATELET MAPPING</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>COAGULATION FACTORS</h3>
+                <ul>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM CT &gt; 85SEC
+                        <ul>
+                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
+                <ul>
+                    <li>IS FIBTEM ML &ge; 10%?
+                        <ul>
+                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>STILL BLEEDING?</h3>
+                <ul>
+                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
+                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
+                        <ul>
+                            <li>MAKE A STRONGER CLOT? GIVE CRYO TO FIBTEM A5 &gt; 14MM, GIVE PLATELETS TO EXTEM A5 &gt; 40MM OR CONSIDER PLATELET FUNCTION TESTING, CONSIDER ELP TO EXTEM CT &lt; 80 SEC</li>
+                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
+                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         `
     },
