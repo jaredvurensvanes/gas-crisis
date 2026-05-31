@@ -24,6 +24,20 @@
     --color-p-hover: #64748b;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.mobile-br {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-br {
+        display: inline;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;

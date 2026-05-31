@@ -1070,7 +1070,7 @@ const crisisData = {
                 <h3>ARREST PERSISTS AT 60 SECS</h3>
                 <ul>
                     <li>INITIATE CPR 30:2</li>
-                    <li>PREPARE FOR RESTERNOTOMY - CHEST OPEN &lt;5MIN</li>
+                    <li>PREPARE FOR RESTERNOTOMY - CHEST OPEN &lt;5/60</li>
                     <li>JUDICIOUS ADRENALINE ONLY (SENIOR CLINICIAN DISCRETION)</li>
                     <li>SWITCH TO BVM, CONFIRM ETT PLACEMENT/PATENCY</li>
                     <li>CONFIRM BILATERAL AIR ENTRY</li>
@@ -2542,7 +2542,7 @@ const crisisData = {
                 <ul>
                     <li><strong>TONE:</strong> UTEROTONICS, FUNDAL MASSAGE, BIMANUAL COMPRESSION (IDC), SPARE SEVOFLURANE</li>
                     <li><strong>TISSUE:</strong> SURGICAL MX - RETAINED PLACENTA / CLOTS</li>
-                    <li><strong>TRAUMA:</strong> SURGICAL MX - CERVICAL / VAGINAL / PERINEAL TRAUMA, IF SHOCKED WITH MINIMAL PV BLEEDING CONSDIER INTRA-ABDOMINAL SOURCE</li>
+                    <li><strong>TRAUMA:</strong> SURGICAL MX - CERVICAL / VAGINAL / PERINEAL TRAUMA, IF SHOCKED WITH MINIMAL PV BLEEDING CONSIDER INTRA-ABDOMINAL SOURCE</li>
                     <li><strong>THROMBIN:</strong> TXA + MANAGE COAGULOPATHY</li>
                 </ul>
                 <h3 style="margin-top: 1.5rem; color: var(--color-e);">SURGICAL MX OPTIONS</h3>
@@ -2677,7 +2677,7 @@ const crisisData = {
                     <div style="background: rgba(255,255,255,0.03); border-radius: 0.5rem; padding: 0.6rem;">
                         <div style="font-weight: 800; margin-bottom: 0.3rem; font-size: 0.75rem; color: #f8fafc;">SODIUM BICARBONATE</div>
                         <div style="font-size: 0.7rem;">1 MMOL/KG IV (8.4% = 1MMOL/ML)</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.2rem;">(ACIDOSIS, ↑K, TCA OD, ARREST >15MIN)</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.2rem;">(ACIDOSIS, ↑K, TCA OD, ARREST >15/60)</div>
                     </div>
                     <div style="background: rgba(255,255,255,0.03); border-radius: 0.5rem; padding: 0.6rem;">
                         <div style="font-weight: 800; margin-bottom: 0.3rem; font-size: 0.75rem; color: #f8fafc;">MAGNESIUM SULFATE</div>
@@ -3006,43 +3006,42 @@ const crisisData = {
         `
     },
     'r-teg': {
-        title: 'TEG ALGORITHM <br><a href="crisis.html?id=r-rotem" class="primary-btn" style="font-size: 0.45em; line-height: 1; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO ROTEM</a>',
+        title: 'TEG ALGORITHM <br><a href="crisis.html?id=r-rotem" class="primary-btn" style="font-size: 0.45em; line-height: 1.2; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO <span class="mobile-br"><br></span>ROTEM</a>',
         content: `
             <div class="crisis-section">
-                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">OBSTETRIC / TRAUMA</div>
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <span>GENERAL SURGERY / OBSTETRICS / TRAUMA</span>
+                    <a href="#teg-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1; padding: 0.45rem 0.9rem; margin: 0; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CARDIAC / VASCULAR SURGERY</a>
+                </div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 1G IV</strong></li>
-                </ul>
-
-                <h3>CLOT INSTABILITY (EARLY DIAGNOSIS)</h3>
-                <ul>
-                    <li>CRT A10 &lt; 47MM (OR FLAT LINE CRT AT 5MIN)
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA / OBSTETRIC / ORTHOPAEDIC)? &rarr; <strong>TXA 1G IV</strong></li>
+                    <li><strong>OR</strong> CLOT INSTABILITY
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYIS &rarr; <strong>TXA 1G IV</strong></li>
+                            <li>CRT A10 &lt; 47MM (OR FLAT LINE CRT AT 5/60)
+                                <ul>
+                                    <li><strong>TXA 1G IV</strong></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>FIBRINOGEN</h3>
+                <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>IS CFF A10 &lt; 15MM?
+                    <li>CFF A10 &lt; 15MM?
                         <ul>
-                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS FIB CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>PLATELETS</h3>
+                <h3>CHECK PLATELETS</h3>
                 <ul>
                     <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM
                         <ul>
-                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
-                                <ul>
-                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE</li>
-                                </ul>
-                            </li>
+                            <li><strong>PLATELETS</strong>
                         </ul>
                     </li>
                 </ul>
@@ -3051,7 +3050,7 @@ const crisisData = {
                 <ul>
                     <li>NORMAL CFF A10 &ge; 15MM AND CKH-R &gt; 10 MINUTES
                         <ul>
-                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
+                            <li>LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3060,37 +3059,37 @@ const crisisData = {
                 <ul>
                     <li>IS CRT (LY30) &gt; 2.2%?
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                            <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>STILL BLEEDING?</h3>
+                <h3>ONGOING BLEEDING?</h3>
                 <ul>
-                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
-                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>RECONSIDER CAUSE OF BLEEDING, DISCUSS WITH SURGEON, CONSULT HAEMATOLOGY</li>
+                    <li>REASSESS <a href="#vha-targets">TARGETS</a></li>
                     <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
                         <ul>
-                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
-                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                            <li>PLATELET INHIBITORS (MULTIPLATE / PLATELET MAPPING)</li>
+                            <li>VON WILLEBRANDS, WARFARIN (INR), ENOXAPARIN (ANTI-Xa)</li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div class="crisis-section" style="margin-top: 2rem;">
-                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CPB / AORTIC DISSECTION</div>
+            <div id="teg-cardiac" class="crisis-section" style="margin-top: 2rem; scroll-margin-top: 2rem;">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CARDIAC / VASCULAR SURGERY</div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
                 </ul>
 
                 <h3>HEPARIN EFFECT PRESENT?</h3>
                 <ul>
                     <li>CXR / CKH-R RATIO OR DIFFERENCE PRESENT
                         <ul>
-                            <li>YES &rarr; HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
+                            <li>HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
                         </ul>
                     </li>
                     <li>CKR AND CKH-R REMAINS @ 10/60
@@ -3101,23 +3100,20 @@ const crisisData = {
                     </li>
                 </ul>
 
-                <h3>FIBRINOGEN</h3>
+                <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>IS CFF A10 &lt; 15MM?
+                    <li>CFF A10 &lt; 15MM?
                         <ul>
-                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS CRYO OR FIBCONC.</strong> (IF CFF A10 &lt; 10, ENSURE PLATELETS ARE ALSO AVAILABLE)</li>
+                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF CFF A10 &lt; 10)</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>PLATELETS</h3>
+                <h3>CHECK PLATELETS</h3>
                 <ul>
-                    <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM
+                    <li>NORMAL CFF A10 &ge; 15MM AND CRT A10 &lt; 47MM OR ABNORMAL MULTIPLATE / PLATELET MAPPING
                         <ul>
-                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
-                                <ul>
-                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE OR PLATELET MAPPING ADP MA &lt; 46</li>
-                                </ul>
+                            <li><strong>PLATELETS</strong>
                             </li>
                         </ul>
                     </li>
@@ -3127,7 +3123,7 @@ const crisisData = {
                 <ul>
                     <li>NORMAL CFF A10 &ge; 15MM AND CKH-R &gt; 10 MINUTES
                         <ul>
-                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
+                            <li>LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3136,63 +3132,115 @@ const crisisData = {
                 <ul>
                     <li>IS CRT (LY30) &gt; 2.2%?
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                            <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>STILL BLEEDING?</h3>
+                <h3>ONGOING BLEEDING?</h3>
                 <ul>
-                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
-                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>RECONSIDER CAUSE OF BLEEDING, DISCUSS WITH SURGEON, CONSULT HAEMATOLOGY</li>
+                    <li>REASSESS <a href="#vha-targets">TARGETS</a></li>
                     <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
                         <ul>
-                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
-                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                            <li>PLATELET INHIBITORS (MULTIPLATE / PLATELET MAPPING)</li>
+                            <li>VON WILLEBRANDS, WARFARIN (INR), ENOXAPARIN (ANTI-Xa)</li>
                         </ul>
                     </li>
                 </ul>
             </div>
+
+            <div id="vha-targets" class="supplementary-box-left" style="top: 50%; transform: translateY(-50%); width: 200px; padding: 0.6rem;">
+                <h3 style="margin-bottom: 0.4rem;">TARGETS</h3>
+                <ul style="margin-top: 0.1rem; font-size: 0.75rem; padding-left: 0.3rem;">
+                    <li style="margin-bottom: 0.25rem;"><strong>Temp</strong> &gt; 36&deg;C</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>pH</strong> &gt; 7.2</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>iCalcium</strong> &gt; 1.1 mmol/L</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>Platelets</strong> &gt; 70 x 10<sup>9</sup>/L</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>Hb</strong> &gt; 75 g/L</li>
+                </ul>
+            </div>
+            
+            <div class="supplementary-box" style="top: 50%; transform: translateY(-50%); width: 240px; padding: 0.8rem;">
+                <h3 style="margin-bottom: 0.5rem; text-transform: uppercase;">PLATELET TESTING</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; color: var(--text-primary);">
+                    <thead>
+                        <tr style="border-bottom: 1.5px solid rgba(255, 255, 255, 0.2); text-align: left;">
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--text-secondary);">TEST</th>
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--color-c);">ABNORMAL</th>
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--color-e);">NORMAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(255, 255, 255, 0.05);">
+                            <td colspan="3" style="padding: 0.25rem 0.2rem; font-weight: 800; font-size: 0.68rem; color: rgb(56, 189, 248); text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);">MULTIPLATE (MEA)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ADP (P2Y12)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 40</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 40</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ASPI (aspirin)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 20</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 20</td>
+                        </tr>
+                        <tr style="border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">TRAP (GPIIb/IIIa)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 77</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 77</td>
+                        </tr>
+                        
+                        <tr style="background: rgba(255, 255, 255, 0.05);">
+                            <td colspan="3" style="padding: 0.25rem 0.2rem; font-weight: 800; font-size: 0.68rem; color: rgb(56, 189, 248); text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);">PLATELET MAPPING</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ADP MA (P2Y12)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 46</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 46</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         `
     },
     'r-rotem': {
-        title: 'ROTEM ALGORITHM <br><a href="crisis.html?id=r-teg" class="primary-btn" style="font-size: 0.45em; line-height: 1; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO TEG</a>',
+        title: 'ROTEM ALGORITHM <br><a href="crisis.html?id=r-teg" class="primary-btn" style="font-size: 0.45em; line-height: 1.2; padding: 0.4rem 0.8rem; margin-top: 0.5rem; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO <span class="mobile-br"><br></span>TEG</a>',
         content: `
             <div class="crisis-section">
-                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">OBSTETRIC / TRAUMA</div>
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <span>GENERAL SURGERY / OBSTETRICS / TRAUMA</span>
+                    <a href="#rotem-cardiac" class="primary-btn" style="font-size: 0.55em; line-height: 1; padding: 0.45rem 0.9rem; margin: 0; display: inline-block; text-decoration: none; border: 1px solid currentColor;">GO TO CARDIAC / VASCULAR SURGERY</a>
+                </div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 1G IV</strong></li>
-                </ul>
-
-                <h3>CLOT INSTABILITY (EARLY DIAGNOSIS)</h3>
-                <ul>
-                    <li>EXTEM A5 &lt; 35MM (OR FLAT LINE FIBTEM AT 5MIN)
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA, OBSTETRIC, ORTHOPAEDIC) &rarr; <strong>TXA 1G IV</strong></li>
+                    <li><strong>OR</strong> CLOT INSTABILITY
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYIS &rarr; <strong>TXA 1G IV</strong></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>FIBRINOGEN</h3>
-                <ul>
-                    <li>IS FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
-                        <ul>
-                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS FIB CONCENTRATE OR CRYOPRECIPITATE</strong></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>PLATELETS</h3>
-                <ul>
-                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM?
-                        <ul>
-                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
+                            <li>EXTEM A5 &lt; 35MM (OR FLAT LINE FIBTEM AT 5/60)
                                 <ul>
-                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE</li>
+                                    <li><strong>TXA 1G IV</strong></li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>ASSESS FIBRINOGEN</h3>
+                <ul>
+                    <li>FIBTEM A5 &lt; 12MM? (OR FLAT LINE @ 5/60)
+                        <ul>
+                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>CHECK PLATELETS</h3>
+                <ul>
+                    <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM? OR ABNORMAL MULTIPLATE / PLATELET MAPPING
+                        <ul>
+                            <li><strong>PLATELETS</strong></li>
                         </ul>
                     </li>
                 </ul>
@@ -3201,75 +3249,77 @@ const crisisData = {
                 <ul>
                     <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM CT &gt; 85SEC
                         <ul>
-                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
+                            <li>LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP OR PCC</strong></li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>IS FIBTEM ML &ge; 10%?
+                    <li>FIBTEM ML &ge; 10%?
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                            <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>STILL BLEEDING?</h3>
+                <h3>ONGOING BLEEDING?</h3>
                 <ul>
-                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
-                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>RECONSIDER CAUSE OF BLEEDING, DISCUSS WITH SURGEON, CONSULT HAEMATOLOGY</li>
+                    <li>REASSESS <a href="#vha-targets">TARGETS</a></li>
                     <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
                         <ul>
-                            <li>MAKE A STRONGER CLOT? GIVE CRYO TO FIBTEM A5 &gt; 14MM, GIVE PLATELETS TO EXTEM A5 &gt; 40MM OR CONSIDER PLATELET FUNCTION TESTING, CONSIDER ELP TO EXTEM CT &lt; 80 SEC</li>
-                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
-                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                            <li>PLATELET INHIBITORS (MULTIPLATE / PLATELET MAPPING)</li>
+                            <li>VON WILLEBRANDS, WARFARIN (INR), ENOXAPARIN (ANTI-Xa)</li>
+                        </ul>
+                    </li>
+                    <li>CONSIDER MORE STRINGENT END POINTS:
+                        <ul>
+                            <li>CRYO TO FIBTEM A5 &gt; 14MM</li>
+                            <li>EXTEM A5 TO &gt; 40MM</li>
+                            <li>ELP TO EXTEM CT &lt; 80 SEC</li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div class="crisis-section" style="margin-top: 2rem;">
-                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CPB / AORTIC DISSECTION</div>
+            <div id="rotem-cardiac" class="crisis-section" style="margin-top: 2rem; scroll-margin-top: 2rem;">
+                <div style="font-weight: 900; font-size: 1.25rem; color: rgb(56, 189, 248); margin-bottom: 1rem; border-bottom: 2px solid rgba(56, 189, 248, 0.2); padding-bottom: 0.5rem; text-transform: uppercase;">CARDIAC / VASCULAR SURGERY</div>
 
                 <h3>CLINICALLY SIGNIFICANT BLEEDING PRESENT?</h3>
                 <ul>
-                    <li>YES &rarr; HIGH RISK OF FIBRINOLYSIS? &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
+                    <li><strong>AND</strong> HIGH RISK OF FIBRINOLYSIS (TRAUMA, OBSTETRIC, ORTHOPAEDIC) &rarr; <strong>TXA 15MG/KG LOAD THEN INFUSION AS PER PROTOCOL</strong></li>
                 </ul>
 
                 <h3>HEPARIN EFFECT PRESENT?</h3>
                 <ul>
                     <li>INTEM CT / HEPTEM CT RATIO &gt; 1.25
                         <ul>
-                            <li>YES &rarr; HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
+                            <li>HEPARIN EFFECT &rarr; <strong>PROTAMINE IV 0.5-1 MG/KG</strong></li>
                         </ul>
                     </li>
                     <li>INTEM & HEPTEM CT BOTH &gt; 205 SEC?
                         <ul>
-                            <li>PROLONGATION REMAINS &rarr; POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
-                            <li>PROLONGATION REMAINS &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
+                            <li>POSSIBLE PROTAMINE EFFECT (FACTOR V), INTRINSIC FACTOR DEFICIENCY, OR FACTOR Xa INHIBITOR &rarr; <strong>WAIT 10/60 THEN RETEST</strong></li>
+                            <li>PROLONGATION REMAINS >10/60 &rarr; ?COAGULATION FACTOR DEFICIENCY &rarr; CONSIDER MIXING STUDIES</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>FIBRINOGEN</h3>
+                <h3>ASSESS FIBRINOGEN</h3>
                 <ul>
-                    <li>IS FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
+                    <li>FIBTEM A5 &lt; 12MM? (INCLUDING FLAT LINE AT 5 MINUTES)
                         <ul>
-                            <li>YES &rarr; LOW FIBRINOGEN &rarr; <strong>FIBRINOGEN AS CRYO OR FIBCONC.</strong> (IF FIBTEM A5 &lt; 6, ENSURE PLATELETS ARE ALSO AVAILABLE)</li>
+                            <li><strong>FIBRINOGEN CONCENTRATE OR CRYOPRECIPITATE</strong> (IF FIBTEM A5 &lt; 6)</li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>PLATELETS</h3>
+                <h3>CHECK PLATELETS</h3>
                 <ul>
                     <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM A5 &lt; 35MM?
                         <ul>
-                            <li>YES &rarr; POOR PLATELET CONTRIBUTION &rarr; <strong>PLATELETS</strong>
-                                <ul>
-                                    <li>*TRIGGERS:* ABNORMAL MULTIPLATE OR PLATELET MAPPING</li>
-                                </ul>
-                            </li>
+                            <li><strong>PLATELETS</strong>
                         </ul>
                     </li>
                 </ul>
@@ -3278,32 +3328,91 @@ const crisisData = {
                 <ul>
                     <li>NORMAL FIBTEM A5 &ge; 12MM AND EXTEM CT &gt; 85SEC
                         <ul>
-                            <li>YES &rarr; LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
+                            <li>LOW COAGULATION FACTORS OR ORAL ANTICOAGULANTS &rarr; <strong>ELP / FFP 2-4 UNITS OR PCC / BERIPLEX</strong></li>
                         </ul>
                     </li>
                 </ul>
 
                 <h3>CLOT INSTABILITY (AFTER 30 MINUTES)</h3>
                 <ul>
-                    <li>IS FIBTEM ML &ge; 10%?
+                    <li>FIBTEM ML &ge; 10%?
                         <ul>
-                            <li>YES &rarr; HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
+                            <li>HYPERFIBRINOLYSIS &rarr; <strong>CONSIDER ADDITIONAL TXA</strong></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h3>STILL BLEEDING?</h3>
+                <h3>ONGOING BLEEDING?</h3>
                 <ul>
-                    <li>CONSIDER <strong>SURGICAL PROBLEM</strong> (DISCUSS WITH SURGEON AND BLOOD BANK/HAEMATOLOGIST)</li>
-                    <li>RECHECK TEMPERATURE, PH, ICALCIUM, PLATELETS AND HAEMOGLOBIN</li>
+                    <li>RECONSIDER CAUSE OF BLEEDING, DISCUSS WITH SURGEON, CONSULT HAEMATOLOGY</li>
+                    <li>REASSESS <a href="#vha-targets">TARGETS</a></li>
                     <li>CONSIDER OTHER CONTRIBUTORS TO BLEEDING:
                         <ul>
-                            <li>MAKE A STRONGER CLOT? GIVE CRYO TO FIBTEM A5 &gt; 14MM, GIVE PLATELETS TO EXTEM A5 &gt; 40MM OR CONSIDER PLATELET FUNCTION TESTING, CONSIDER ELP TO EXTEM CT &lt; 80 SEC</li>
-                            <li>PLATELET INHIBITORS (DO MULTIPLATE PLATELET FUNCTION TEST)</li>
-                            <li>CONSIDER VON WILLEBRANDS DISEASE, WARFARIN (INR), ENOXAPARIN ETC.</li>
+                            <li>PLATELET INHIBITORS (MULTIPLATE / PLATELET MAPPING)</li>
+                            <li>VON WILLEBRANDS, WARFARIN (INR), ENOXAPARIN (ANTI-Xa)</li>
+                        </ul>
+                    </li>
+                    <li>CONSIDER MORE STRINGENT END POINTS:
+                        <ul>
+                            <li>CRYO TO FIBTEM A5 &gt; 14MM</li>
+                            <li>EXTEM A5 TO &gt; 40MM</li>
+                            <li>ELP TO EXTEM CT &lt; 80 SEC</li>
                         </ul>
                     </li>
                 </ul>
+            </div>
+
+            <div id="vha-targets" class="supplementary-box-left" style="top: 50%; transform: translateY(-50%); width: 200px; padding: 0.6rem;">
+                <h3 style="margin-bottom: 0.4rem;">TARGETS</h3>
+                <ul style="margin-top: 0.1rem; font-size: 0.75rem; padding-left: 0.3rem;">
+                    <li style="margin-bottom: 0.25rem;"><strong>Temp</strong> &gt; 36&deg;C</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>pH</strong> &gt; 7.2</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>iCalcium</strong> &gt; 1.1 mmol/L</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>Platelets</strong> &gt; 70 x 10<sup>9</sup>/L</li>
+                    <li style="margin-bottom: 0.25rem;"><strong>Hb</strong> &gt; 75 g/L</li>
+                </ul>
+            </div>
+            
+            <div class="supplementary-box" style="top: 50%; transform: translateY(-50%); width: 240px; padding: 0.8rem;">
+                <h3 style="margin-bottom: 0.5rem; text-transform: uppercase;">PLATELET TESTING</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.72rem; color: var(--text-primary);">
+                    <thead>
+                        <tr style="border-bottom: 1.5px solid rgba(255, 255, 255, 0.2); text-align: left;">
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--text-secondary);">TEST</th>
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--color-c);">ABNORMAL</th>
+                            <th style="padding: 0.3rem 0.2rem; font-weight: 800; font-size: 0.7rem; color: var(--color-e);">NORMAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(255, 255, 255, 0.05);">
+                            <td colspan="3" style="padding: 0.25rem 0.2rem; font-weight: 800; font-size: 0.68rem; color: rgb(56, 189, 248); text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);">MULTIPLATE (MEA)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ADP (P2Y12)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 40</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 40</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ASPI (aspirin)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 20</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 20</td>
+                        </tr>
+                        <tr style="border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">TRAP (GPIIb/IIIa)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 77</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 77</td>
+                        </tr>
+                        
+                        <tr style="background: rgba(255, 255, 255, 0.05);">
+                            <td colspan="3" style="padding: 0.25rem 0.2rem; font-weight: 800; font-size: 0.68rem; color: rgb(56, 189, 248); text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);">PLATELET MAPPING</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                            <td style="padding: 0.3rem 0.2rem; font-weight: 600;">ADP MA (P2Y12)</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-c); font-weight: 700;">&le; 46</td>
+                            <td style="padding: 0.3rem 0.2rem; color: var(--color-e); font-weight: 700;">&gt; 46</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         `
     },
@@ -3319,6 +3428,7 @@ const crisisData = {
                     <li>Australian and New Zealand Committee on Resuscitation (ANZCOR). ANZCOR Guidelines [Internet]. Melbourne (VIC): ANZCOR; [updated 2024; cited 2026 Mar 12]. Available from: https://www.anzcor.org/</li>
                     <li>Borshoff DC. The anaesthetic crisis manual. International edition, version 2.0. Perth: Leeuwin Press; 2017.</li>
                     <li>Chu J, Johnston TA, Geoghegan J; Royal College of Obstetricians and Gynaecologists. Maternal Collapse in Pregnancy and the Puerperium: Green-top Guideline No. 56. BJOG. 2020;127(5):e14-e52.</li>
+                    <li>Hegde S, Downs C. Goal-directed bleeding management: Understanding and implementing viscoelastic haemostatic assays across patient blood management. In: Australasian Anaesthesia 2025. Melbourne: Australian and New Zealand College of Anaesthetists; 2025. p. 33-43. Available from: https://anzca.edu.au/</li>
                     <li>Kaltsas G, Caplin M, Davies P, et al. ENETS Consensus Guidelines for the Standards of Care in Neuroendocrine Tumors: Pre- and Perioperative Therapy in Patients with Neuroendocrine Tumors. Neuroendocrinology. 2017;105(3):245-254.</li>
                     <li>Karcher C, Jurisevic C, Southwood T, McCormack D, Rogers A, Levine A, et al. The Australasian ANZSCTS/ANZICS guidelines on cardiothoracic advanced life support (CALS-ANZ). Crit Care Resusc. 2022 Sep 5;24(3):218-223.</li>
                     <li>Kopp PA, Giordani I, Feldt-Rasmussen U, Forget-Renaud A. Approach to the patient with thyroid storm. J Clin Endocrinol Metab. 2026 Feb 8;111(5):1484-1494. doi: 10.1210/clinem/dgag054.</li>
